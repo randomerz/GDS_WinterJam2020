@@ -351,3 +351,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 4
+  playerAnim: {fileID: 741315192}
+  playerSprite: {fileID: 741315191}
