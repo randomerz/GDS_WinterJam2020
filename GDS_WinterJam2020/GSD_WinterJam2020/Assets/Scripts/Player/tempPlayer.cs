@@ -6,6 +6,7 @@ public enum State {
     Standing,
     Running,
     Dashing,
+    Parrying,
 }
 
 public class Timer {
@@ -34,48 +35,78 @@ public class Timer {
     }
 }
 
+public class Ability {
+    private Timer cooldownTimer;
+    private Timer durationTimer;
+
+    public Ability(float cooldown, float duration) {
+        cooldownTimer = new Timer(cooldown);
+        durationTimer = new Timer(duration);
+    }
+
+    public void update(float deltaTime) {
+        cooldownTimer.update(deltaTime);
+        durationTimer.update(deltaTime);
+    }
+
+    public bool isAvailable() {
+        return cooldownTimer.isFinished() && durationTimer.isFinished();
+    }
+
+    public bool isRunning() {
+        return durationTimer.isRunning();
+    }
+
+    public bool isFinished() {
+        return durationTimer.isFinished();
+    }
+
+    public void reset() {
+        cooldownTimer.reset();
+        durationTimer.reset();
+    }
+}
+
 public class tempPlayer : MonoBehaviour
 {
-    public float moveSpeed;
+    public float moveSpeed = 5.0f;
 
     public Animator playerAnim;
     public SpriteRenderer playerSprite;
 
     private State state;
 
-    public float dashTime;
-    public float dashCooldown;
-    private Timer dashTimer;
-    private Timer dashCooldownTimer;
+    public float dashTime = 0.25f;
+    public float dashCooldown = 0.5f;
+    private Ability dashAbility;
 
-    public float dashDamping = 0.95f;
+    public float parryTime = 0.25f;
+    public float parryCooldown = 5.0f;
+    public GameObject shield;
+    private Ability parryAbility;
+
+    public float dashDamping = 0.9f;
     public float runDamping = 0.5f;
 
-    public float dashMultiplier = 10.0f;
+    public float dashMultiplier = 5.0f;
 
     private Vector3 velocity = new Vector3(0.0f, 0.0f, 0.0f);
 
     void Start()
     {
-        dashTimer = new Timer(dashTime);
-        dashCooldownTimer = new Timer(dashCooldown);
+        dashAbility = new Ability(dashCooldown, dashTime);
+        parryAbility = new Ability(parryCooldown, parryTime);
     }
 
     void Update()
     {
-        //Debug.Log(dashTimer.timeRemaining);
+        //Debug.Log("state: " + state);
 
+        // velocity control
         switch (state) {
-            case State.Running: velocity *= runDamping; break;
             case State.Dashing: velocity *= dashDamping; break;
-            default: break;
+            default: velocity *= runDamping; break;
         }
-
-        /* velocity /= state switch { */
-        /*     State.Running => runDamping, */
-        /*     State.Dashing => dashDamping, */
-        /*     State.Standing => 1, */
-        /* }; */
 
         if (state != State.Dashing) {
             velocity.x += Input.GetAxisRaw("Horizontal") * moveSpeed;
@@ -88,24 +119,34 @@ public class tempPlayer : MonoBehaviour
             velocity.z = 0.0f;
         }
 
-        if (Input.GetKeyDown("space")) {
+        // dash stuff
+
+        if (Input.GetKeyDown(KeyCode.Space)) {
             handleDash();
         }
-
-        if (state == State.Dashing) {
-            dashTimer.update(Time.deltaTime);
-            if (dashTimer.isFinished()) {
-                setState(State.Standing);
-            }
+        if (Input.GetKeyDown(KeyCode.LeftShift)) {
+            handleParry();
         }
 
-        if (state != State.Dashing && velocity.magnitude > 0) {
-            setState(State.Running);
-        } else if (state == State.Running && velocity.magnitude == 0) {
-            setState(State.Standing);
+        switch (state) {
+            case State.Standing:
+                if (velocity.magnitude > 0.0f) setState(State.Running);
+                break;
+            case State.Running:
+                if (velocity.magnitude == 0.0f) setState(State.Standing);
+                break;
+            case State.Dashing:
+                if (dashAbility.isFinished()) setState(State.Standing);
+                break;
+            case State.Parrying:
+                if (parryAbility.isFinished()) setState(State.Standing);
+                break;
+            default:
+                break;
         }
 
-        if (state == State.Running && velocity.magnitude > moveSpeed) {
+        if ((state == State.Running || state == State.Parrying) 
+                && velocity.magnitude > moveSpeed) {
             velocity = velocity.normalized * moveSpeed;
         }
 
@@ -123,26 +164,46 @@ public class tempPlayer : MonoBehaviour
         playerSprite.flipX = 90 < fAngle && fAngle < 270;
     }
 
-    void setState(State s) {
-        state = s;
+    void setState(State newState) {
+        Debug.Log("switching from " + state + " to " + newState);
+
+        if (state == State.Parrying && newState != State.Parrying) {
+            GameObject shieldInstance = transform.Find("shield").gameObject;
+            Destroy(shieldInstance);
+        }
+
+        state = newState;
         playerAnim.SetBool("isRunning", state == State.Running);
         //playerAnim.SetBool("isDashing", state == State.Dashing);
     }
 
     void handleDash() {
-        Debug.Log(dashCooldownTimer.timeRemaining);
-        if (state != State.Dashing && dashCooldownTimer.isFinished()) {
-            dashCooldownTimer.reset();
-            dashTimer.reset();
+        if (state != State.Dashing && dashAbility.isAvailable()) {
+            //Debug.Log("cooldown: " + cooldownTimer.timeRemaining);
+            dashAbility.reset();
             velocity *= dashMultiplier;
             setState(State.Dashing);
         }
     }
 
+    void handleParry() {
+        if (state != State.Dashing && parryAbility.isAvailable()) {
+            parryAbility.reset();
+
+            GameObject shieldInstance = 
+                Instantiate(shield, new Vector3(transform.position.x, transform.position.y, 0.0f), Quaternion.identity);
+
+            shieldInstance.name = "shield";
+
+            shieldInstance.transform.parent = transform;
+            setState(State.Parrying);
+        }
+    }
+
     private void FixedUpdate()
     {
-        dashTimer.update(Time.deltaTime);
-        dashCooldownTimer.update(Time.deltaTime);
-        transform.position += velocity;
+        dashAbility.update(Time.deltaTime);
+        parryAbility.update(Time.deltaTime);
+        transform.position += velocity * Time.deltaTime;
     }
 }
