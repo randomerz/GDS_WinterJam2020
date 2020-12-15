@@ -49,13 +49,13 @@ MonoBehaviour:
   playerAnim: {fileID: 5249408957470549703}
   playerSprite: {fileID: 5249408957470549704}
   dashTime: 0.25
-  dashCooldown: 1
+  dashCooldown: 0
   parryTime: 0.25
   parryCooldown: 5
-  shield: {fileID: 0}
-  dashDamping: 0.95
-  runDamping: 0.25
-  dashMultiplier: 8
+  shield: {fileID: 6432990517456392168, guid: 0328745a09cde0ca4b79de74fc855917, type: 3}
+  dashDamping: 0.9
+  runDamping: 0.5
+  dashMultiplier: 5
 --- !u!114 &5249408956337281015
 MonoBehaviour:
   m_ObjectHideFlags: 0
