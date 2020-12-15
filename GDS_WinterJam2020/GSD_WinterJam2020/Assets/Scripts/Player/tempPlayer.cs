@@ -137,10 +137,10 @@ public class tempPlayer : MonoBehaviour
                 break;
             case State.Dashing:
                 if (dashAbility.isFinished()) setState(State.Standing);
-                break;
+                goto case State.Standing;
             case State.Parrying:
                 if (parryAbility.isFinished()) setState(State.Standing);
-                break;
+                goto case State.Standing;
             default:
                 break;
         }
@@ -174,7 +174,7 @@ public class tempPlayer : MonoBehaviour
 
         state = newState;
         playerAnim.SetBool("isRunning", state == State.Running);
-        //playerAnim.SetBool("isDashing", state == State.Dashing);
+        playerAnim.SetBool("isDashing", state == State.Dashing);
     }
 
     void handleDash() {
