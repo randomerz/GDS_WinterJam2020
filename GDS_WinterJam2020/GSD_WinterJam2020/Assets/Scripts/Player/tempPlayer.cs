@@ -174,7 +174,7 @@ public class tempPlayer : MonoBehaviour
 
         state = newState;
         playerAnim.SetBool("isRunning", state == State.Running);
-        //playerAnim.SetBool("isDashing", state == State.Dashing);
+        playerAnim.SetBool("isDashing", state == State.Dashing);
     }
 
     void handleDash() {

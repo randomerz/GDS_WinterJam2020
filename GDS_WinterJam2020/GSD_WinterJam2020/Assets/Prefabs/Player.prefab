@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b7c9736a21f3ec4db65b9de4a13a491, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 0.1
+  moveSpeed: 5
   playerAnim: {fileID: 5249408957470549703}
   playerSprite: {fileID: 5249408957470549704}
   dashTime: 0.25
