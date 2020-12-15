@@ -136,11 +136,19 @@ public class tempPlayer : MonoBehaviour
                 if (velocity.magnitude == 0.0f) setState(State.Standing);
                 break;
             case State.Dashing:
-                if (dashAbility.isFinished()) setState(State.Standing);
-                goto case State.Standing;
+                if (dashAbility.isFinished())
+                {
+                    setState(State.Running);
+                    //goto case State.Running; // ur always 0 after dash so it goes to standing and then running anyway :(
+                }
+                break;
             case State.Parrying:
-                if (parryAbility.isFinished()) setState(State.Standing);
-                goto case State.Standing;
+                if (parryAbility.isFinished())
+                {
+                    setState(State.Running);
+                    //goto case State.Running;
+                }
+                break;
             default:
                 break;
         }
