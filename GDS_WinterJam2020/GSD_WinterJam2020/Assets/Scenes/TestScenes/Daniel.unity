@@ -257,6 +257,17 @@ PrefabInstance:
       propertyPath: turnSpeed
       value: 500
       objectReference: {fileID: 0}
+    - target: {fileID: 8877236461153358805, guid: 8acefdb6a0acf0d0d9f6ac64012bbac0,
+        type: 3}
+      propertyPath: projectile
+      value: 
+      objectReference: {fileID: 7840938328587096668, guid: 536082233323486619fa4761c957423a,
+        type: 3}
+    - target: {fileID: 8877236461153358805, guid: 8acefdb6a0acf0d0d9f6ac64012bbac0,
+        type: 3}
+      propertyPath: projectileSpeed
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 8877236461153358806, guid: 8acefdb6a0acf0d0d9f6ac64012bbac0,
         type: 3}
       propertyPath: m_Name
