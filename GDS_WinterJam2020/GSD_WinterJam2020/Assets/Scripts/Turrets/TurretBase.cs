@@ -32,9 +32,15 @@ public class DefaultAiming : AimBehavior {
         dir.SetLookRotation(targetDir, Vector3.up);
 
         float current_angle = transform.rotation.eulerAngles.z;
+        //Debug.Log("Current: " + current_angle);
         float target_angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg + 180;
-
+        //Debug.Log("Target: " + target_angle);
         float diff = target_angle - current_angle;
+        Debug.Log("diff:" + diff);
+        if (diff > 180 || diff < -180)
+        {
+            diff = -diff;
+        }
         float incr = turnSpeed * (diff > 0 ? 1 : -1) * Time.deltaTime;
 
         return current_angle + (Mathf.Abs(incr) > Mathf.Abs(diff) ? diff : incr);
