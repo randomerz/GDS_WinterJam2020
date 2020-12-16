@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class AimBehavior : MonoBehaviour {
-    public abstract Quaternion getAngle(Transform transform);
+    public abstract float getAngle(Transform transform);
 }
 
 public class DefaultAiming : AimBehavior {
     private List<GameObject> targets = new List<GameObject>();
-    public float turnSpeed = 0.1f;
+    public float turnSpeed;
 
     public DefaultAiming (float s) {
         turnSpeed = s;
@@ -22,26 +22,28 @@ public class DefaultAiming : AimBehavior {
         targets.Add(GameObject.Find("Player"));
     }
 
-    public override Quaternion getAngle(Transform transform) {
+    public override float getAngle(Transform transform) {
         refreshTargetsList();
         GameObject target = targets[0];
 
-        Vector3 targetDir = (target.transform.position - transform.position);
-        targetDir = targetDir.normalized;
+        Vector3 targetDir = (target.transform.position - transform.position).normalized;
 
-        Vector3 currentDir = transform.forward;
-        currentDir = Vector3.RotateTowards(currentDir, targetDir, turnSpeed * Time.deltaTime, 1.0f);
-
-        //return Quaternion.Lerp(transform.rotation, rotation, turnSpeed);
         Quaternion dir = new Quaternion();
-        dir.SetLookRotation(currentDir, Vector3.up);
-        return dir;
+        dir.SetLookRotation(targetDir, Vector3.up);
+
+        float current_angle = transform.rotation.eulerAngles.z;
+        float target_angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg + 180;
+
+        float diff = target_angle - current_angle;
+        float incr = turnSpeed * (diff > 0 ? 1 : -1) * Time.deltaTime;
+
+        return current_angle + (Mathf.Abs(incr) > Mathf.Abs(diff) ? diff : incr);
     }
 }
 
 public class TurretBase : MonoBehaviour
 {
-    public float turnSpeed = 0.5f; // 0 to 1
+    public float turnSpeed = 50f;
     public float fireRate = 1.0f;
     public Projectile projectile;
 
@@ -59,6 +61,6 @@ public class TurretBase : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.rotation = Quaternion.Euler(0.0f, 0.0f, aimAlgo.getAngle(transform).z);
+        transform.rotation = Quaternion.Euler(0.0f, 0.0f, aimAlgo.getAngle(transform));
     }
 }

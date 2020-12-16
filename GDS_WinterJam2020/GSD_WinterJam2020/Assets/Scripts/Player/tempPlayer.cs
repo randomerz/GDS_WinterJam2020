@@ -139,14 +139,14 @@ public class tempPlayer : MonoBehaviour
                 if (dashAbility.isFinished())
                 {
                     setState(State.Running);
-                    //goto case State.Running; // ur always 0 after dash so it goes to standing and then running anyway :(
+                    goto case State.Running; // ur always 0 after dash so it goes to standing and then running anyway :(
                 }
                 break;
             case State.Parrying:
                 if (parryAbility.isFinished())
                 {
                     setState(State.Running);
-                    //goto case State.Running;
+                    goto case State.Running;
                 }
                 break;
             default:
@@ -199,7 +199,7 @@ public class tempPlayer : MonoBehaviour
             parryAbility.reset();
 
             GameObject shieldInstance = 
-                Instantiate(shield, new Vector3(transform.position.x, transform.position.y, 0.0f), Quaternion.identity);
+                Instantiate(shield, new Vector3(transform.position.x, transform.position.y, 1.0f), Quaternion.identity);
 
             shieldInstance.name = "shield";
 
