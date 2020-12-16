@@ -1,50 +1,10 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class AimBehavior : MonoBehaviour {
     public abstract float getAngle(Transform transform);
-}
-
-public class DefaultAiming : AimBehavior {
-    private List<GameObject> targets = new List<GameObject>();
-    public float turnSpeed;
-
-    public DefaultAiming (float s) {
-        turnSpeed = s;
-    }
-
-    private void refreshTargetsList() {
-        // get all the enemies in the scene
-        // rn im just making it the player
-
-        targets.Clear();
-        targets.Add(GameObject.Find("Player"));
-    }
-
-    public override float getAngle(Transform transform) {
-        refreshTargetsList();
-        GameObject target = targets[0];
-
-        Vector3 targetDir = (target.transform.position - transform.position).normalized;
-
-        Quaternion dir = new Quaternion();
-        dir.SetLookRotation(targetDir, Vector3.up);
-
-        float current_angle = transform.rotation.eulerAngles.z;
-        //Debug.Log("Current: " + current_angle);
-        float target_angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg + 180;
-        //Debug.Log("Target: " + target_angle);
-        float diff = target_angle - current_angle;
-        Debug.Log("diff:" + diff);
-        if (diff > 180 || diff < -180)
-        {
-            diff = -diff;
-        }
-        float incr = turnSpeed * (diff > 0 ? 1 : -1) * Time.deltaTime;
-
-        return current_angle + (Mathf.Abs(incr) > Mathf.Abs(diff) ? diff : incr);
-    }
+    public abstract GameObject getTarget();
 }
 
 public class TurretBase : MonoBehaviour
@@ -64,7 +24,7 @@ public class TurretBase : MonoBehaviour
     void Start()
     {
         fireTimer = new Timer(fireRate);
-        aimAlgo = new DefaultAiming(turnSpeed);
+        aimAlgo = new DefaultAim(turnSpeed);
     }
 
     void shoot() {
@@ -75,7 +35,7 @@ public class TurretBase : MonoBehaviour
 
         float angle = (transform.rotation.eulerAngles.z + 90) * Mathf.Deg2Rad;
         Vector3 dir = new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0.0f);
-        p.initialize(projectileSpeed, dir, projectileDamage);
+        p.initialize(projectileSpeed, dir, projectileDamage, aimAlgo.getTarget());
     }
 
     // Update is called once per frame

@@ -273,7 +273,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: BasicTurret
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8877236461153358805, guid: 8acefdb6a0acf0d0d9f6ac64012bbac0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 8acefdb6a0acf0d0d9f6ac64012bbac0, type: 3}
 --- !u!1 &1175272413
 GameObject:
@@ -358,3 +359,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2033557994 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8877236461153358806, guid: 8acefdb6a0acf0d0d9f6ac64012bbac0,
+    type: 3}
+  m_PrefabInstance: {fileID: 877392636}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2033557995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2033557994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6073efe86772a15099cb8236f0cfacfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turnSpeed: 0
+  fireRate: 1
+  projectileSpeed: 20
+  projectileDamage: 20
+  projectile: {fileID: 3270687611607728660, guid: a6195c3b7897e60b79e7603f9b353c97,
+    type: 3}
