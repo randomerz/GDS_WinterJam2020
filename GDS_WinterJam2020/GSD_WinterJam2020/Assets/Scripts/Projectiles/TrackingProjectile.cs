@@ -19,6 +19,4 @@ public class TrackingProjectile : BasicProjectile {
         vel = vel.normalized;
         vel *= speed;
     }
-    
-    public override float getDamage() => damage;
 }
