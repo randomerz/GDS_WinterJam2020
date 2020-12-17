@@ -67,9 +67,11 @@ public class Ability {
     }
 }
 
-public class tempPlayer : MonoBehaviour
+public class Player : MonoBehaviour
 {
     public float moveSpeed = 5.0f;
+
+    public int HP = 5;
 
     public Animator playerAnim;
     public SpriteRenderer playerSprite;

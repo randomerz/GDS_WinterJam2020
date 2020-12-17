@@ -30,8 +30,30 @@ public class BasicProjectile : Projectile {
         transform.position += vel * Time.deltaTime;
         bulletLifetime -= Time.deltaTime;
     }
-    
-    public override float getDamage() => damage;
 
     public override Team getTeam() => team;
+
+    private void OnTriggerEnter2D(Collider2D collision) {
+        GameObject otherObj = collision.gameObject;
+
+        switch (team) {
+            case Team.Player:
+                if (otherObj.tag != "Player") {
+                    // damage enemies
+                }
+                Destroy(gameObject);
+                break;
+            case Team.Enemy:
+                Debug.Log("Hit");
+                if (otherObj.tag != "Enemy") {
+                    Player player = otherObj.GetComponent<Player>();
+                    if (player != null) {
+                        Debug.Log("Hit player");
+                        player.HP -= 1;
+                    }
+                }
+                Destroy(gameObject);
+                break;
+        }
+    }
 }
