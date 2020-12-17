@@ -4,10 +4,16 @@ using UnityEngine;
 
 public class BasicProjectile : Projectile {
     public float speed;
-    private Vector3 vel;
-    private float damage;
 
-    private float lifetime = 0;
+    [System.NonSerialized]
+    public Vector3 vel;
+
+    [System.NonSerialized]
+    public float damage;
+
+    public float bulletLifetime = 1.5f;
+
+    public Team team;
 
     public override void initialize(float speed, Vector3 dir, float damage, GameObject target) {
         this.speed = speed;
@@ -16,15 +22,16 @@ public class BasicProjectile : Projectile {
     }
 
     public void Update() {
-        if (lifetime > 1.5)
+        if (bulletLifetime < 0.0f)
             Destroy(gameObject);
     }
 
     public void FixedUpdate() {
         transform.position += vel * Time.deltaTime;
-
-        lifetime += Time.deltaTime;
+        bulletLifetime -= Time.deltaTime;
     }
     
     public override float getDamage() => damage;
+
+    public override Team getTeam() => team;
 }
