@@ -41,7 +41,6 @@ public class BasicProjectile : Projectile {
                 if (otherObj.tag != "Player") {
                     // damage enemies
                 }
-                Destroy(gameObject);
                 break;
             case Team.Enemy:
                 Debug.Log("Hit");
@@ -52,8 +51,8 @@ public class BasicProjectile : Projectile {
                         player.HP -= 1;
                     }
                 }
-                Destroy(gameObject);
                 break;
+                Destroy(gameObject);
         }
     }
 }

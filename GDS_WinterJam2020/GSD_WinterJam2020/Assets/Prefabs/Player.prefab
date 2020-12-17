@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 498314542}
   - component: {fileID: 498314541}
   - component: {fileID: 498314540}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -96,9 +96,9 @@ GameObject:
   - component: {fileID: 5249408956337281015}
   - component: {fileID: 360811813}
   - component: {fileID: 360811812}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -132,6 +132,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  HP: 5
   playerAnim: {fileID: 5249408957470549703}
   playerSprite: {fileID: 5249408957470549704}
   dashTime: 0.5
@@ -205,7 +206,7 @@ GameObject:
   - component: {fileID: 5249408957470549705}
   - component: {fileID: 5249408957470549704}
   - component: {fileID: 5249408957470549703}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tempPlayerSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}

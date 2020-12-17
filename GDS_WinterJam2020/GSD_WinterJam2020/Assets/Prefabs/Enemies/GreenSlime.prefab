@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3924230995530692443}
   - component: {fileID: 3924230995530692420}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GunSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,7 +91,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3924230995908520539}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BulletSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -122,7 +122,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3924230996529270049}
   - component: {fileID: 3924230996529270050}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SlimeSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -203,7 +203,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3924230996553074017}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -235,7 +235,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3924230996666372923}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GreenSlime
   m_TagString: Untagged
   m_Icon: {fileID: 0}

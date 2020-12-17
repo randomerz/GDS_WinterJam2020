@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8925776498305054830}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cog
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8925776498815469907}
   - component: {fileID: 8925776498815469904}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: CogSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
