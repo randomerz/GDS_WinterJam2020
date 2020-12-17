@@ -6,40 +6,52 @@ public class Room : MonoBehaviour
 {
     public Collider2D[] doorColliders;
     public Animator[] doorAnimators;
-    public bool isOpen;
+
+    public List<GameObject> enemies1 = new List<GameObject>();
+    public List<GameObject> enemies2 = new List<GameObject>();
+    private bool spawnedWave1 = false;
+
+    public bool isOpen = true;
+    public bool isLocked = false;
+    public bool isExplored = false;
     
-    public List<GameObject> enemies = new List<GameObject>();
-
-    private bool isExplored = false;
-
-    private float temp;
-
     void Start()
     {
         foreach (Collider2D c in doorColliders)
             c.enabled = !isOpen;
         foreach (Animator a in doorAnimators)
             a.SetBool("isOpen", isOpen);
-        foreach (GameObject g in enemies)
+        foreach (GameObject g in enemies1)
+            g.SetActive(!isOpen);
+        foreach (GameObject g in enemies2)
             g.SetActive(!isOpen);
     }
 
 
     void Update()
     {
-        if (!isOpen)
-            temp += Time.deltaTime;
-
-        int activeEnemyCount = 0;
-        foreach (GameObject g in enemies)
-            if (g.activeSelf)
-                activeEnemyCount++;
-
-        //if (activeEnemyCount == 0)
-        if (temp > 5)
+        if (!isOpen && !isLocked)
         {
-            temp = 0;
-            ChangeDoorState(true);
+            int activeEnemy1Count = 0;
+            foreach (GameObject g in enemies1)
+                if (g.activeSelf)
+                    activeEnemy1Count++;
+
+            if (!spawnedWave1 && activeEnemy1Count == 0)
+            {
+                SpawnWave2();
+                spawnedWave1 = true;
+            }
+
+            int activeEnemy2Count = 0;
+            foreach (GameObject g in enemies2)
+                if (g.activeSelf)
+                    activeEnemy2Count++;
+
+            if (spawnedWave1 && activeEnemy2Count == 0)
+            {
+                ChangeDoorState(true);
+            }
         }
     }
 
@@ -50,6 +62,12 @@ public class Room : MonoBehaviour
         isExplored = true;
     }
 
+    public void UnlockRoom()
+    {
+        ChangeDoorState(true);
+        isExplored = true;
+    }
+
     private void ChangeDoorState(bool s)
     {
         isOpen = s;
@@ -57,7 +75,19 @@ public class Room : MonoBehaviour
             c.enabled = !isOpen;
         foreach (Animator a in doorAnimators)
             a.SetBool("isOpen", isOpen);
-        foreach (GameObject g in enemies)
-            g.SetActive(!isOpen);
+        if (!isOpen)
+            SpawnWave1();
+    }
+
+    private void SpawnWave1()
+    {
+        foreach (GameObject g in enemies1)
+            g.SetActive(true);
+    }
+
+    private void SpawnWave2()
+    {
+        foreach (GameObject g in enemies2)
+            g.SetActive(true);
     }
 }
