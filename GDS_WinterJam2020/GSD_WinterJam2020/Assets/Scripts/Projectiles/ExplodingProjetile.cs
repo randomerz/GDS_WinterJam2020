@@ -30,7 +30,7 @@ public class ExplodingProjetile : BasicProjectile {
                     if (otherObj.tag != "Enemy") {
                         Player player = otherObj.GetComponent<Player>();
                         if (player != null) {
-                            player.HP -= 1;
+                            player.damage();
                         }
                     }
                     break;

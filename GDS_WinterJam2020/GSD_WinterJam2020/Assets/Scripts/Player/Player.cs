@@ -9,32 +9,6 @@ public enum State {
     Parrying,
 }
 
-public class Timer {
-    public float timeRemaining;
-    private float startTime;
-
-    public Timer(float time) {
-        timeRemaining = 0.0f;
-        startTime = time;
-    }
-
-    public void update(float deltaTime) {
-        timeRemaining = Mathf.Max(timeRemaining - deltaTime, 0.0f);
-    }
-
-    public bool isFinished() {
-        return timeRemaining == 0.0f;
-    }
-
-    public bool isRunning() {
-        return timeRemaining > 0.0f;
-    }
-
-    public void reset() {
-        timeRemaining = startTime;
-    }
-}
-
 public class Ability {
     private Timer cooldownTimer;
     private Timer durationTimer;
@@ -94,10 +68,17 @@ public class Player : MonoBehaviour
 
     private Vector3 velocity = new Vector3(0.0f, 0.0f, 0.0f);
 
+    public float flashTime = 0.25f;
+    private Timer flashTimer;
+
+    SpriteRenderer sprite;
+
     void Start()
     {
         dashAbility = new Ability(dashCooldown, dashTime);
         parryAbility = new Ability(parryCooldown, parryTime);
+        flashTimer = new Timer(flashTime);
+        sprite = GameObject.Find("tempPlayerSprite").GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -210,10 +191,27 @@ public class Player : MonoBehaviour
         }
     }
 
+    void updateColor() {
+        if (flashTimer.isRunning()) {
+            float saturation = 0.75f;
+            float red = flashTimer.progress() * saturation;
+            
+            // to go from red to normal gotta go from (255, 0, 0) to (255, 255, 255)
+            sprite.color = new Color(1.0f, 1.0f - red, 1.0f - red, 1.0f);
+        }
+    }
+
+    public void damage() {
+        HP -= 1;
+        flashTimer.reset();
+    }
+
     private void FixedUpdate()
     {
         dashAbility.update(Time.deltaTime);
         parryAbility.update(Time.deltaTime);
+        flashTimer.update(Time.deltaTime);
         transform.position += velocity * Time.deltaTime;
+        updateColor();
     }
 }

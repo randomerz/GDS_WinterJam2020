@@ -47,8 +47,7 @@ public class BasicProjectile : Projectile {
                 if (otherObj.tag != "Enemy") {
                     Player player = otherObj.GetComponent<Player>();
                     if (player != null) {
-                        Debug.Log("Hit player");
-                        player.HP -= 1;
+                        player.damage();
                     }
                 }
                 break;

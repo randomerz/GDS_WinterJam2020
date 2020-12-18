@@ -143,6 +143,7 @@ MonoBehaviour:
   dashDamping: 0.96
   runDamping: 0.5
   dashMultiplier: 3
+  flashTime: 0.25
 --- !u!114 &5249408956337281015
 MonoBehaviour:
   m_ObjectHideFlags: 0
