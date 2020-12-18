@@ -7,6 +7,8 @@ public class ExplodingProjetile : BasicProjectile {
     public float explosionRadius = 5.0f;
     private GameObject target;
 
+    public float rotSpeed = 1000.0f;
+
     public GameObject explosion;
 
     public override void initialize(float speed, Vector3 dir, float damage, GameObject target) {
@@ -41,5 +43,10 @@ public class ExplodingProjetile : BasicProjectile {
         exp.transform.rotation = Quaternion.EulerAngles(90, 0, 0);
 
         Destroy(gameObject);
+    }
+
+    private void FixedUpdate() {
+        transform.Rotate(0.0f, 0.0f, rotSpeed * Time.deltaTime, Space.Self);
+        base.FixedUpdate();
     }
 }
