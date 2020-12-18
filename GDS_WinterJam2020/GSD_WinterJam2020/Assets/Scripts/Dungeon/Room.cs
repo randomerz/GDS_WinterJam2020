@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Room : MonoBehaviour
 {
-    public Collider2D[] doorColliders;
-    public Animator[] doorAnimators;
+    public GameObject[] doorsOpen;
+    public GameObject[] doorsClose;
 
     public List<GameObject> enemies1 = new List<GameObject>();
     public List<GameObject> enemies2 = new List<GameObject>();
@@ -17,10 +17,7 @@ public class Room : MonoBehaviour
     
     void Start()
     {
-        foreach (Collider2D c in doorColliders)
-            c.enabled = !isOpen;
-        foreach (Animator a in doorAnimators)
-            a.SetBool("isOpen", isOpen);
+        ChangeDoorState(isOpen);
         foreach (GameObject g in enemies1)
             g.SetActive(!isOpen);
         foreach (GameObject g in enemies2)
@@ -58,7 +55,10 @@ public class Room : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (!isExplored)
+        {
             ChangeDoorState(false);
+            SpawnWave1();
+        }
         isExplored = true;
     }
 
@@ -71,12 +71,12 @@ public class Room : MonoBehaviour
     private void ChangeDoorState(bool s)
     {
         isOpen = s;
-        foreach (Collider2D c in doorColliders)
-            c.enabled = !isOpen;
-        foreach (Animator a in doorAnimators)
-            a.SetBool("isOpen", isOpen);
-        if (!isOpen)
-            SpawnWave1();
+        foreach (GameObject g in doorsOpen)
+            g.SetActive(s);
+        foreach (GameObject g in doorsClose)
+            g.SetActive(!s);
+        //foreach (Animator a in doorAnimators)
+        //    a.SetBool("isOpen", isOpen);
     }
 
     private void SpawnWave1()

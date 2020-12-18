@@ -6162,10 +6162,10 @@ TextureImporter:
       name: sheet_288
       rect:
         serializedVersion: 2
-        x: 452
-        y: 1155
-        width: 74
-        height: 25
+        x: 453
+        y: 1157
+        width: 71
+        height: 71
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
