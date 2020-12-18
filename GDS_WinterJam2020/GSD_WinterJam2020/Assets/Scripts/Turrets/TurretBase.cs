@@ -14,6 +14,8 @@ public class TurretBase : MonoBehaviour
     public float projectileSpeed = 20.0f;
     public float projectileDamage = 20.0f;
 
+    public Team team;
+
     public Projectile projectile;
 
     private Timer fireTimer;

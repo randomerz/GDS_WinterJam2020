@@ -98,7 +98,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   bulletLifetime: 1.5
-  team: 1
+  team: 0
   trackingAccel: 0
   explosionRadius: 5
   rotSpeed: 1000

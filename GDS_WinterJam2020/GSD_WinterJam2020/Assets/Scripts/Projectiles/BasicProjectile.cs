@@ -51,7 +51,7 @@ public class BasicProjectile : Projectile {
                     }
                 }
                 break;
-                Destroy(gameObject);
         }
+        Destroy(gameObject);
     }
 }
