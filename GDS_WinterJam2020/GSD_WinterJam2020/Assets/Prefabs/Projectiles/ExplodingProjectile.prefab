@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 414486655066548547}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.6582271, y: 2.1678538, z: -0.6570324}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -72,7 +72,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -4155198580660395707, guid: e2f2b29262297b84ba32fea938a39cd9,
+  m_Sprite: {fileID: -1057252518793112632, guid: e2f2b29262297b84ba32fea938a39cd9,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -98,9 +98,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   bulletLifetime: 1.5
-  team: 1
+  team: 0
   trackingAccel: 0
   explosionRadius: 5
+  rotSpeed: 1000
   explosion: {fileID: 339807701988244593, guid: 958361d1a1263b611b728f05b1c97770,
     type: 3}
 --- !u!58 &8157233479126106773
