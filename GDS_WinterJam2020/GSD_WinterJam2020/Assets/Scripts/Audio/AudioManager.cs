@@ -30,6 +30,8 @@ namespace AudioManager
             SetUpAudioArray(m_sfxList);
 
             ClearCurrentPrevMusic();
+
+            PlayMusic(0);
         }
 
         private void CreateInstance()
@@ -107,7 +109,7 @@ namespace AudioManager
         private void PlayNextMusicTrack()
         {
             m_currentMusic.m_audioSource.Play();
-            if (!m_currentMusic.m_fade && m_prevMusic.m_audioSource != null)
+            /**if (!m_currentMusic.m_fade && m_prevMusic.m_audioSource != null)
             {
                 m_prevMusic.m_audioSource.Stop();
             }
@@ -118,7 +120,7 @@ namespace AudioManager
                 {
                     StartCoroutine(FadeOut(m_prevMusic));
                 }
-            }
+            }**/
         }
 
         public void PlaySFX(string _name)
@@ -135,12 +137,39 @@ namespace AudioManager
             }
         }
 
+
         public void PlaySFX(int _id)
         {
             if (_id >= 0 && _id < m_sfxList.Length)
             {
                 Debug.Log("Playing sound");
                 m_sfxList[_id].m_audioSource.Play();
+            }
+            else
+            {
+                Debug.LogError("Didnt find sound");
+                return;
+            }
+        }
+        public void PauseSFX(int _id)
+        {
+            if (_id >= 0 && _id < m_sfxList.Length)
+            {
+                Debug.Log("Pausing SFX");
+                m_sfxList[_id].m_audioSource.Pause();
+            }
+            else
+            {
+                Debug.LogError("Didnt find sound");
+                return;
+            }
+        }
+        public void StopSFX(int _id)
+        {
+            if (_id >= 0 && _id < m_sfxList.Length)
+            {
+                Debug.Log("Stopping SFX");
+                m_sfxList[_id].m_audioSource.Stop();
             }
             else
             {

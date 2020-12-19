@@ -12,6 +12,7 @@ public enum State {
 public class Ability {
     private Timer cooldownTimer;
     private Timer durationTimer;
+    
 
     public Ability(float cooldown, float duration) {
         cooldownTimer = new Timer(cooldown);
@@ -43,6 +44,7 @@ public class Ability {
 
 public class Player : MonoBehaviour
 {
+    
     public float moveSpeed = 5.0f;
 
     public int HP = 5;
@@ -73,12 +75,16 @@ public class Player : MonoBehaviour
 
     SpriteRenderer sprite;
 
+    private AudioManager.AudioManager audioManager;
+    private bool runningSound = false;
+
     void Start()
     {
         dashAbility = new Ability(dashCooldown, dashTime);
         parryAbility = new Ability(parryCooldown, parryTime);
         flashTimer = new Timer(flashTime);
         sprite = GameObject.Find("tempPlayerSprite").GetComponent<SpriteRenderer>();
+        audioManager = AudioManager.AudioManager.m_instance;
     }
 
     void Update()
@@ -89,6 +95,23 @@ public class Player : MonoBehaviour
         switch (state) {
             case State.Dashing: velocity *= dashDamping; break;
             default: velocity *= runDamping; break;
+        }
+        if (state == State.Running)
+        {
+            if (!runningSound)
+            {
+                audioManager.PlaySFX(0);
+                runningSound = true;
+            }            
+        }
+        else
+        {
+            if (runningSound)
+            {
+                audioManager.PauseSFX(0);
+                runningSound = false;
+            }
+            
         }
 
         if (state != State.Dashing) {
