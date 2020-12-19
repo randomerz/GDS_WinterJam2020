@@ -2,11 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyMovementAI : MonoBehaviour {
-    public Vector3 vel;
+public class EnemyBase : MonoBehaviour {
 
-    void Start() {
+    public float run_speed = 5.0f;
+    public float walk_speed = 0.5f;
+    public float walk_radius = 12.5f;
+
+    private Vector3 vel;
+
+    private GameObject player;
+
+    // Start is called before the first frame update
+    void Start()
+    {
         vel = new Vector3(0.0f, 0.0f, 0.0f);
+        player = GameObject.Find("Player");
+    }
+
+    // Update is called once per frame
+    void Update() {
+        Vector3 radius = player.transform.position - transform.position;
+
+        vel = radius.normalized;
+        vel *= (radius.magnitude > walk_radius) ? run_speed : walk_speed;
     }
 
     void FixedUpdate() {
