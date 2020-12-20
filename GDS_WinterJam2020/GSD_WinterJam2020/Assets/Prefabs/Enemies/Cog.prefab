@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: -9212730850916721447}
   - component: {fileID: 6766392242080391953}
   - component: {fileID: 8925267184530246335}
-  - component: {fileID: -1721522035692372225}
   - component: {fileID: 5308461129328304369}
   - component: {fileID: 853337153982616521}
   m_Layer: 8
@@ -92,25 +91,10 @@ MonoBehaviour:
   projectileSpeed: 20
   projectileDamage: 20
   team: 1
-  projectile: {fileID: -1721522035692372225}
+  projectile: {fileID: 7840938328587096668, guid: 536082233323486619fa4761c957423a,
+    type: 3}
   aimAlgo: {fileID: 5308461129328304369}
   audioManager: {fileID: 0}
---- !u!114 &-1721522035692372225
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8925776498305054865}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: baeb903e45493bcbeb7fdf2226eb4837, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0
-  bulletLifetime: 1.5
-  team: 1
-  trackingAccel: 0
 --- !u!114 &5308461129328304369
 MonoBehaviour:
   m_ObjectHideFlags: 0
