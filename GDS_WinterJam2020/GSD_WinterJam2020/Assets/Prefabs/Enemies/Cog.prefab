@@ -109,7 +109,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0
   bulletLifetime: 1.5
-  team: 0
+  team: 1
   trackingAccel: 0
 --- !u!114 &5308461129328304369
 MonoBehaviour:
