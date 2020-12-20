@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 498314542}
   - component: {fileID: 498314541}
   - component: {fileID: 498314540}
+  - component: {fileID: 1672571536}
   m_Layer: 8
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -83,6 +84,62 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 498314539}
   m_Enabled: 1
+--- !u!114 &1672571536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 498314539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08f0fe50bd4a866f981aef708d8e286b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_backgroundMusicList:
+  - m_name: bg
+    m_audioClip: {fileID: 8300000, guid: f9c428db8f9f69641839ab8f4d478678, type: 3}
+    m_looping: 1
+    m_volume: 0.3
+    m_pitch: 1
+    m_fadeInSpeed: 0
+    m_fadeOutSpeed: 0
+    m_fade: 0
+    m_object: {fileID: 0}
+    m_audioSource: {fileID: 0}
+  m_sfxList:
+  - m_name: player_running
+    m_audioClip: {fileID: 8300000, guid: d5dfdaf8c7643b140831b8094d6d3c77, type: 3}
+    m_looping: 1
+    m_volume: 1
+    m_pitch: 1
+    m_fadeInSpeed: 0
+    m_fadeOutSpeed: 0
+    m_fade: 0
+    m_object: {fileID: 0}
+    m_audioSource: {fileID: 0}
+  m_currentMusic:
+    m_name: bg
+    m_audioClip: {fileID: 8300000, guid: f9c428db8f9f69641839ab8f4d478678, type: 3}
+    m_looping: 0
+    m_volume: 0
+    m_pitch: 0
+    m_fadeInSpeed: 0
+    m_fadeOutSpeed: 0
+    m_fade: 0
+    m_object: {fileID: 0}
+    m_audioSource: {fileID: 0}
+  m_prevMusic:
+    m_name: bg
+    m_audioClip: {fileID: 8300000, guid: f9c428db8f9f69641839ab8f4d478678, type: 3}
+    m_looping: 0
+    m_volume: 0
+    m_pitch: 0
+    m_fadeInSpeed: 0
+    m_fadeOutSpeed: 0
+    m_fade: 0
+    m_object: {fileID: 0}
+    m_audioSource: {fileID: 0}
 --- !u!1 &5249408956337281018
 GameObject:
   m_ObjectHideFlags: 0
@@ -195,7 +252,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.4
 --- !u!1 &5249408957470549706
 GameObject:
   m_ObjectHideFlags: 0

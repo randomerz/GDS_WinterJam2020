@@ -45,7 +45,10 @@ public class TurretBase : MonoBehaviour
     {
         if (fireTimer.isFinished()) shoot();
 
-        transform.rotation = Quaternion.Euler(0.0f, 0.0f, aimAlgo.getAngle(transform));
+        //transform.rotation = Quaternion.Euler(0.0f, 0.0f, aimAlgo.getAngle(transform));
+        float angle = aimAlgo.getAngle(transform);
+        Quaternion targetRotation = Quaternion.Euler(new Vector3(0, 0, angle));
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, turnSpeed * Time.deltaTime);
     }
 
     void FixedUpdate() {
