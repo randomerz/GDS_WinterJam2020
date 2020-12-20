@@ -87,6 +87,14 @@ public class Player : MonoBehaviour
         sprite = GameObject.Find("tempPlayerSprite").GetComponent<SpriteRenderer>();
         audioManager = AudioManager.AudioManager.m_instance;
     }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        GameObject other = collision.gameObject;
+        if (other.tag == "Wall")
+        {
+            state = State.Running;
+        }
+    }
 
     void Update()
     {
