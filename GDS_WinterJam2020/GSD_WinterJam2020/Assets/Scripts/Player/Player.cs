@@ -81,6 +81,9 @@ public class Player : MonoBehaviour
     private AudioManager.AudioManager audioManager;
     private bool runningSound = false;
 
+    public float turretSpeed = 5.0f;
+    public GameObject turretPrefab;
+
     void Start()
     {
         dashAbility = new Ability(dashCooldown, dashTime);
@@ -136,13 +139,15 @@ public class Player : MonoBehaviour
             velocity.z = 0.0f;
         }
 
-        // dash stuff
-
         if (Input.GetKeyDown(KeyCode.Space)) {
             handleDash();
         }
         if (Input.GetKeyDown(KeyCode.LeftShift)) {
             handleParry();
+        }
+
+        if (Input.GetButtonDown("Fire2")) {
+            placeTurret();
         }
 
         switch (state) {
@@ -272,5 +277,19 @@ public class Player : MonoBehaviour
 
     public void resetShield() {
         parryAbility.reset();
+    }
+
+    public void placeTurret() {
+        if (ammo > 0) {
+            ammo -= 1;
+            float rot = wrenchObj.transform.rotation.eulerAngles.z;
+            Vector3 turretVel = new Vector3(Mathf.Cos(rot), Mathf.Sin(rot), 0.0f) * -turretSpeed;
+
+            Debug.Log(turretPrefab);
+
+            GameObject turret = Instantiate(turretPrefab, transform.position, wrenchObj.transform.rotation);
+            TurretSlide slide = turret.gameObject.AddComponent<TurretSlide>() as TurretSlide;
+            slide.setVel(turretVel);
+        }
     }
 }

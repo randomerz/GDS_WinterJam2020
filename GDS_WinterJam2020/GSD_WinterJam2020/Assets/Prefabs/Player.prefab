@@ -5100,6 +5100,9 @@ MonoBehaviour:
   sprite: {fileID: 5249408957470549704}
   dashParticles: {fileID: 7304319653579664657}
   wrenchObj: {fileID: 5835189417969910856}
+  turretSpeed: 5
+  turretPrefab: {fileID: 8877236461153358805, guid: 8acefdb6a0acf0d0d9f6ac64012bbac0,
+    type: 3}
 --- !u!50 &360811813
 Rigidbody2D:
   serializedVersion: 4

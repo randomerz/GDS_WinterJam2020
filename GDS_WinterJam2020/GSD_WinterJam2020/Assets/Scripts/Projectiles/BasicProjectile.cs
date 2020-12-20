@@ -49,7 +49,7 @@ public class BasicProjectile : Projectile {
                 }
                 break;
             case Team.Enemy:
-                Debug.Log("Hit");
+                //Debug.Log("Hit");
                 if (otherObj.tag != "Enemy") {
                     Player player = otherObj.GetComponent<Player>();
                     if (player != null) {

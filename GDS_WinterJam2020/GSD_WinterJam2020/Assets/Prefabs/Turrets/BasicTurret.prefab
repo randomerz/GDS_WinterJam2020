@@ -68,8 +68,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 2000897419
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: -9097326535413985782, guid: e2f2b29262297b84ba32fea938a39cd9,
     type: 3}
@@ -92,9 +92,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 8877236461153358806}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28d4a10e16e582cb59a2e2a273d81ff1, type: 3}
+  m_Script: {fileID: 11500000, guid: 6073efe86772a15099cb8236f0cfacfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turnSpeed: 1
+  turnSpeed: 50
   fireRate: 1
-  projectile: {fileID: 0}
+  projectileSpeed: 20
+  projectileDamage: 20
+  team: 0
+  projectile: {fileID: 7840938328587096668, guid: 536082233323486619fa4761c957423a,
+    type: 3}

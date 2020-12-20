@@ -3175,6 +3175,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5249408956337281016, guid: 8dc44c090e8b307d887f8ac2d5b638fe,
+        type: 3}
+      propertyPath: turretSpeed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5249408956337281016, guid: 8dc44c090e8b307d887f8ac2d5b638fe,
+        type: 3}
+      propertyPath: turretPrefab
+      value: 
+      objectReference: {fileID: 8877236461153358806, guid: 8acefdb6a0acf0d0d9f6ac64012bbac0,
+        type: 3}
     - target: {fileID: 5249408956337281017, guid: 8dc44c090e8b307d887f8ac2d5b638fe,
         type: 3}
       propertyPath: m_RootOrder

@@ -142,7 +142,7 @@ namespace AudioManager
         {
             if (_id >= 0 && _id < m_sfxList.Length)
             {
-                Debug.Log("Playing sound");
+                //Debug.Log("Playing sound");
                 m_sfxList[_id].m_audioSource.Play();
             }
             else

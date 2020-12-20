@@ -5,7 +5,7 @@ using UnityEngine;
 public class Shield : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D collision) {
         GameObject otherObj = collision.gameObject;
-        Debug.Log("Shield hit, tag: " + otherObj.tag);
+        //Debug.Log("Shield hit, tag: " + otherObj.tag);
 
         if (otherObj.tag == "Bullet") {
             GameObject playerObj = transform.parent.gameObject;
