@@ -79,8 +79,8 @@ public class Room : MonoBehaviour
             g.SetActive(s);
         foreach (GameObject g in doorsClose)
             g.SetActive(!s);
-        foreach (ParticleSystem p in doorParticles)
-            p.Play();
+        //foreach (ParticleSystem p in doorParticles)
+        //    p.Play();
     }
 
     private IEnumerator ShakeDoorThenOpen()
