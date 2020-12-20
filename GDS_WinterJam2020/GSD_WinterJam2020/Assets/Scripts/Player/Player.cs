@@ -46,7 +46,7 @@ public class Player : MonoBehaviour
 {
     public int ammo = 0;
     public int maxAmmo = 4;
-    private bool canPlaceTurrets = true;
+    public bool canPlaceTurrets = true;
     
     public float moveSpeed = 5.0f;
 
