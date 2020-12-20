@@ -44,6 +44,9 @@ public class Ability {
 
 public class Player : MonoBehaviour
 {
+    
+    private bool dead = false;
+
     public int ammo = 0;
     public int maxAmmo = 4;
     public bool canPlaceTurrets = true;
@@ -53,7 +56,7 @@ public class Player : MonoBehaviour
 
     public Animator playerAnim;
     public SpriteRenderer playerSprite;
-
+    
     private State state;
 
     public float turretSpeed;
@@ -127,6 +130,10 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        if (dead)
+        {
+            return;
+        }
         //Debug.Log("state: " + state);
 
         // velocity control
@@ -286,6 +293,7 @@ public class Player : MonoBehaviour
             if (canDie && HP <= 0)
             {
                 GameObject.Find("CanvasUI").GetComponent<ActivateGameOverPanel>().ActivatePanel();
+                dead = true;
             }
         }
     }
@@ -294,6 +302,7 @@ public class Player : MonoBehaviour
     {
         HP = 7;
         ammo = 4;
+        dead = false;
     }
 
     public void gainHP(int hp)
