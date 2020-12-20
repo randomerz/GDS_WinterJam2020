@@ -37,7 +37,7 @@ public class TurretBase : MonoBehaviour
         fireTimer.reset();
         Projectile p = 
             Instantiate(projectile, new Vector3(transform.position.x, transform.position.y, 0.5f), Quaternion.identity);
-        p.setTeam(Team.Enemy);
+        p.setTeam(team);
 
         float angle = (transform.rotation.eulerAngles.z + 90) * Mathf.Deg2Rad;
         Vector3 dir = new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0.0f);

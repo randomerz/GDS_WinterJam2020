@@ -3175,6 +3175,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5249408956337281016, guid: 8dc44c090e8b307d887f8ac2d5b638fe,
+        type: 3}
+      propertyPath: turretSpeed
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 5249408956337281017, guid: 8dc44c090e8b307d887f8ac2d5b638fe,
         type: 3}
       propertyPath: m_RootOrder
@@ -61878,6 +61883,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42707a6f616d4c747b3e91ab4278ef75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sl: {fileID: 0}
 --- !u!1001 &1200440849
 PrefabInstance:
   m_ObjectHideFlags: 0
