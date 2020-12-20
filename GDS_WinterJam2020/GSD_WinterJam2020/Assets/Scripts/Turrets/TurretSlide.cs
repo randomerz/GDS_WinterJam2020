@@ -6,7 +6,7 @@ public class TurretSlide : MonoBehaviour {
     private Vector3 vel;
     public float damping = 0.9f;
 
-    void Start() { }
+    void Start() {}
 
     void Update() {
         Debug.Log("Vel: " + vel);

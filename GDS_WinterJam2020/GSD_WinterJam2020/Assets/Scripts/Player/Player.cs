@@ -291,5 +291,5 @@ public class Player : MonoBehaviour
             TurretSlide slide = turret.gameObject.AddComponent<TurretSlide>() as TurretSlide;
             slide.setVel(turretVel);
         }
-    }
+   }
 }
