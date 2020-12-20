@@ -88,13 +88,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turnSpeed: 50
   fireRate: 1
-  projectileSpeed: 20
+  projectileSpeed: 5
   projectileDamage: 20
   team: 1
-  projectile: {fileID: 7840938328587096668, guid: 536082233323486619fa4761c957423a,
+  projectile: {fileID: 3270687611607728660, guid: 830baec6c884f8b4da10d6c64941292d,
     type: 3}
   aimAlgo: {fileID: 5308461129328304369}
   audioManager: {fileID: 0}
+  num_bullets: 4
 --- !u!114 &5308461129328304369
 MonoBehaviour:
   m_ObjectHideFlags: 0
