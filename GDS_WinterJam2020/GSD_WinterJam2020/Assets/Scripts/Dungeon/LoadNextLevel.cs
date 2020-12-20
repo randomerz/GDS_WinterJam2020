@@ -9,6 +9,7 @@ public class LoadNextLevel : MonoBehaviour
 
     public void LoadLevel()
     {
+        GameObject.Find("Player").GetComponent<Player>().restartPlayer();
         SceneManager.LoadScene(levelName);
     }
 }

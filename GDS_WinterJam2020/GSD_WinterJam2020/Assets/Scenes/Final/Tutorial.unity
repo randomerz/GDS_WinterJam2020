@@ -33761,9 +33761,9 @@ MonoBehaviour:
   myEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1032961666}
-        m_MethodName: PrintString
-        m_Mode: 0
+      - m_Target: {fileID: 1032961669}
+        m_MethodName: LoadLevel
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -34015,7 +34015,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Gather 6 bullets to deploy a turret (r-click)
+  m_text: Gather 4 bullets to deploy a turret (r-click)
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c84d89b754e4e8546a8399fd02f41f6d, type: 2}
   m_sharedMaterial: {fileID: 7593804625516348630, guid: c84d89b754e4e8546a8399fd02f41f6d,
