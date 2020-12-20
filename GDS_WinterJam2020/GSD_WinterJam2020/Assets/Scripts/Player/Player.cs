@@ -289,10 +289,11 @@ public class Player : MonoBehaviour
         if (ammo > 0 && canPlaceTurrets) {
             ammo -= 1;
             // ammo = 0;
-            float rot = wrenchObj.transform.rotation.z;
-            Vector3 turretVel = new Vector3(Mathf.Cos(rot), Mathf.Sin(rot), 0.0f) * -turretSpeed;
+            float rot = wrenchObj.transform.eulerAngles.z * Mathf.Deg2Rad;
+            Debug.Log("Before: " + wrenchObj.transform.rotation.z + " After: " + rot);
+            Vector3 turretVel = new Vector3(Mathf.Cos(rot), Mathf.Sin(rot), 0.0f) * turretSpeed;
 
-            Debug.Log(turretPrefab);
+            //Debug.Log(turretPrefab);
 
             GameObject turret = Instantiate(turretPrefab, transform.position, wrenchObj.transform.rotation);
             TurretSlide slide = turret.gameObject.AddComponent<TurretSlide>() as TurretSlide;

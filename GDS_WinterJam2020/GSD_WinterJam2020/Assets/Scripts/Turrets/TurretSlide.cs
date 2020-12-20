@@ -9,7 +9,6 @@ public class TurretSlide : MonoBehaviour {
     void Start() {}
 
     void Update() {
-        Debug.Log("Vel: " + vel);
         vel *= damping;
 
         if (vel.magnitude < 0.05f) {
