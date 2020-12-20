@@ -8,8 +8,8 @@ public class Shield : MonoBehaviour {
         Debug.Log("Shield hit, tag: " + otherObj.tag);
 
         if (otherObj.tag == "Bullet" ) {
-            TurretBase tmp;
-            if ((tmp = otherObj.GetComponent<TurretBase>()) != null && tmp.team == Team.Enemy)
+            Projectile tmp;
+            if ((tmp = otherObj.GetComponent<Projectile>()) != null && tmp.getTeam() == Team.Enemy)
             {
                 GameObject playerObj = transform.parent.gameObject;
                 Player player = playerObj.GetComponent<Player>();
