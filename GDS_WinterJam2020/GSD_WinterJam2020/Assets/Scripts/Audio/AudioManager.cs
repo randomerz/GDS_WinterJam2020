@@ -23,7 +23,7 @@ namespace AudioManager
         public static float vol_mult=1;
         private void Awake()
         {
-            DontDestroyOnLoad(gameObject);
+            DontDestroyOnLoad(transform.parent.gameObject);
 
             CreateInstance();
 
