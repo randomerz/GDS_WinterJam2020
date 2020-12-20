@@ -250,6 +250,7 @@ public class Player : MonoBehaviour
 
     void handleParry() {
         if (state != State.Dashing && parryAbility.isAvailable()) {
+            
             parryAbility.reset();
 
             GameObject shieldInstance = 
@@ -258,6 +259,7 @@ public class Player : MonoBehaviour
             shieldInstance.name = "shield";
 
             shieldInstance.transform.parent = transform;
+            audioManager.PlayOneShotSFX(5);
             setState(State.Parrying);
         }
     }
