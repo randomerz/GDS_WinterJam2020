@@ -52,6 +52,7 @@ public class Room : MonoBehaviour
                 //ChangeDoorState(true);
                 StartCoroutine(ShakeDoorThenOpen());
                 finishedWaves = true;
+                GameObject.Find("Player").GetComponent<Player>().canPlaceTurrets = false;
                 GameObject.Find("Player").GetComponent<Player>().destroyAllTurrets();
             }
         }
@@ -62,6 +63,7 @@ public class Room : MonoBehaviour
         if (!isExplored)
         {
             ChangeDoorState(false);
+            GameObject.Find("Player").GetComponent<Player>().canPlaceTurrets = true;
             StartCoroutine(SpawnWave1());
         }
         isExplored = true;

@@ -2320,9 +2320,9 @@ MonoBehaviour:
   myEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 375692684}
-        m_MethodName: gainHP
-        m_Mode: 3
+      - m_Target: {fileID: 739580763}
+        m_MethodName: HealPickedUp
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2407,9 +2407,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 739580758}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3cc17cae33d1bc41bcb042fb37c579c, type: 3}
+  m_Script: {fileID: 11500000, guid: d32ed969b05c83b4aad5539fdbafecdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  amountHeal: 1
 --- !u!1001 &747156418
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -72669,9 +72670,9 @@ MonoBehaviour:
   myEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 375692684}
-        m_MethodName: gainHP
-        m_Mode: 3
+      - m_Target: {fileID: 739580763}
+        m_MethodName: HealPickedUp
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -72756,9 +72757,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1353819486}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3cc17cae33d1bc41bcb042fb37c579c, type: 3}
+  m_Script: {fileID: 11500000, guid: d32ed969b05c83b4aad5539fdbafecdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  amountHeal: 1
 --- !u!1001 &1362079697
 PrefabInstance:
   m_ObjectHideFlags: 0
