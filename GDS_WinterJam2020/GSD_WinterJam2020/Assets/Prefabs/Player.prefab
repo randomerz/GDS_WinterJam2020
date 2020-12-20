@@ -180,7 +180,6 @@ MonoBehaviour:
     m_fade: 0
     m_object: {fileID: 0}
     m_audioSource: {fileID: 0}
-  vol_mult: 1
 --- !u!1 &4629356917144526401
 GameObject:
   m_ObjectHideFlags: 0
@@ -5085,10 +5084,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b7c9736a21f3ec4db65b9de4a13a491, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ammo: 0
   moveSpeed: 5
   HP: 20
   playerAnim: {fileID: 5249408957470549703}
   playerSprite: {fileID: 5249408957470549704}
+  turretSpeed: 0
+  turretPrefab: {fileID: 3729212530189596604, guid: 8acefdb6a0acf0d0d9f6ac64012bbac0,
+    type: 3}
   dashTime: 0.25
   dashCooldown: 0
   parryTime: 0.25

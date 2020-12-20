@@ -20,7 +20,7 @@ public class TurretBase : MonoBehaviour
 
     private Timer fireTimer;
 
-    public AimBehavior aimAlgo;
+    public AimBehavior aimAlgo; 
     public AudioManager.AudioManager audioManager;
 
     // Start is called before the first frame update
@@ -28,7 +28,6 @@ public class TurretBase : MonoBehaviour
     {
         audioManager = AudioManager.AudioManager.m_instance;
         fireTimer = new Timer(fireRate);
-        aimAlgo = new DefaultAim(turnSpeed);
         float randDelay = Random.Range(0.0f, fireRate);
         fireTimer.addTime(randDelay);
     }

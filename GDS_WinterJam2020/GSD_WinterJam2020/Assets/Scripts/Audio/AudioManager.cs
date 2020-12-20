@@ -20,7 +20,7 @@ namespace AudioManager
         private AudioData m_prevMusic;
 
         [HideInInspector]
-        public float vol_mult=1;
+        public static float vol_mult=1;
         private void Awake()
         {
             DontDestroyOnLoad(gameObject);

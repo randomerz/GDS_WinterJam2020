@@ -239,6 +239,7 @@ GameObject:
   - component: {fileID: 2719870819397921188}
   - component: {fileID: 3481350004588945830}
   - component: {fileID: -1150402659436919974}
+  - component: {fileID: 487213919185738486}
   m_Layer: 8
   m_Name: GreenSlime
   m_TagString: Enemy
@@ -282,6 +283,8 @@ MonoBehaviour:
   team: 1
   projectile: {fileID: 7840938328587096668, guid: 536082233323486619fa4761c957423a,
     type: 3}
+  aimAlgo: {fileID: 487213919185738486}
+  audioManager: {fileID: 0}
 --- !u!114 &2719870819397921188
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -334,6 +337,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &487213919185738486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3924230996666372922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 797598ff1c669504387dce0011aee7b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turnSpeed: 20
 --- !u!1001 &4158993350984116992
 PrefabInstance:
   m_ObjectHideFlags: 0

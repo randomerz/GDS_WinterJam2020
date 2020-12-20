@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class DefaultAim : AimBehavior
 {
-    private List<GameObject> targets = new List<GameObject>();
+    private List<GameObject> targets;
     public float turnSpeed = 50.0f;
 
+    private void Start()
+    {
+        targets = new List<GameObject>();
+    }
     public DefaultAim(float turnSpeed) {
         this.turnSpeed = turnSpeed;
     }

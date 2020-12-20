@@ -44,7 +44,7 @@ public class Ability {
 
 public class Player : MonoBehaviour
 {
-    private int ammo = 0;
+    public int ammo = 0;
     
     public float moveSpeed = 5.0f;
 
@@ -54,6 +54,9 @@ public class Player : MonoBehaviour
     public SpriteRenderer playerSprite;
 
     private State state;
+
+    public float turretSpeed;
+    public GameObject turretPrefab;
 
     public float dashTime = 0.25f;
     public float dashCooldown = 0.5f;
