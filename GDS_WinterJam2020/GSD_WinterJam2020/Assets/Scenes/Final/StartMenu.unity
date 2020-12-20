@@ -6067,6 +6067,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1541180797}
     m_Modifications:
+    - target: {fileID: 1367319467316019826, guid: 3ba7ef6151e95b54d97e22670e844982,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3127547948053292498, guid: 3ba7ef6151e95b54d97e22670e844982,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5240983238206793240, guid: 3ba7ef6151e95b54d97e22670e844982,
         type: 3}
       propertyPath: m_Name
@@ -6130,6 +6140,11 @@ PrefabInstance:
     - target: {fileID: 6325454459330682989, guid: 3ba7ef6151e95b54d97e22670e844982,
         type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6412781415552599039, guid: 3ba7ef6151e95b54d97e22670e844982,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -8658,7 +8673,6 @@ GameObject:
   - component: {fileID: 814112160}
   - component: {fileID: 814112159}
   - component: {fileID: 814112158}
-  - component: {fileID: 814112157}
   m_Layer: 8
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -8666,102 +8680,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &814112157
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 814112156}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08f0fe50bd4a866f981aef708d8e286b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_backgroundMusicList:
-  - m_name: bg
-    m_audioClip: {fileID: 8300000, guid: f9c428db8f9f69641839ab8f4d478678, type: 3}
-    m_looping: 1
-    m_volume: 0.15
-    m_pitch: 1
-    m_fadeInSpeed: 0
-    m_fadeOutSpeed: 0
-    m_fade: 0
-    m_object: {fileID: 0}
-    m_audioSource: {fileID: 0}
-  m_sfxList:
-  - m_name: player_running
-    m_audioClip: {fileID: 8300000, guid: d5dfdaf8c7643b140831b8094d6d3c77, type: 3}
-    m_looping: 1
-    m_volume: 0.628
-    m_pitch: 1
-    m_fadeInSpeed: 0
-    m_fadeOutSpeed: 0
-    m_fade: 0
-    m_object: {fileID: 0}
-    m_audioSource: {fileID: 0}
-  - m_name: player_damaged
-    m_audioClip: {fileID: 8300000, guid: a5e6f8645baee574993069af3799230c, type: 3}
-    m_looping: 0
-    m_volume: 1
-    m_pitch: 1
-    m_fadeInSpeed: 0
-    m_fadeOutSpeed: 0
-    m_fade: 0
-    m_object: {fileID: 0}
-    m_audioSource: {fileID: 0}
-  - m_name: turret_shoot
-    m_audioClip: {fileID: 8300000, guid: aa323db3eacdafb4e8ebafb5c9dad9b1, type: 3}
-    m_looping: 1
-    m_volume: 0.104
-    m_pitch: 2.278
-    m_fadeInSpeed: 0
-    m_fadeOutSpeed: 0
-    m_fade: 0
-    m_object: {fileID: 0}
-    m_audioSource: {fileID: 0}
-  - m_name: enemy_shoot
-    m_audioClip: {fileID: 8300000, guid: aa323db3eacdafb4e8ebafb5c9dad9b1, type: 3}
-    m_looping: 0
-    m_volume: 0.073
-    m_pitch: 3
-    m_fadeInSpeed: 0
-    m_fadeOutSpeed: 0
-    m_fade: 0
-    m_object: {fileID: 0}
-    m_audioSource: {fileID: 0}
-  - m_name: item_pickup
-    m_audioClip: {fileID: 8300000, guid: be3027146315d5c4e935c83fcd2dff33, type: 3}
-    m_looping: 0
-    m_volume: 1
-    m_pitch: 1
-    m_fadeInSpeed: 0
-    m_fadeOutSpeed: 0
-    m_fade: 0
-    m_object: {fileID: 0}
-    m_audioSource: {fileID: 0}
-  m_currentMusic:
-    m_name: bg
-    m_audioClip: {fileID: 8300000, guid: f9c428db8f9f69641839ab8f4d478678, type: 3}
-    m_looping: 0
-    m_volume: 0
-    m_pitch: 0
-    m_fadeInSpeed: 0
-    m_fadeOutSpeed: 0
-    m_fade: 0
-    m_object: {fileID: 0}
-    m_audioSource: {fileID: 0}
-  m_prevMusic:
-    m_name: bg
-    m_audioClip: {fileID: 8300000, guid: f9c428db8f9f69641839ab8f4d478678, type: 3}
-    m_looping: 0
-    m_volume: 0
-    m_pitch: 0
-    m_fadeInSpeed: 0
-    m_fadeOutSpeed: 0
-    m_fade: 0
-    m_object: {fileID: 0}
-    m_audioSource: {fileID: 0}
 --- !u!81 &814112158
 AudioListener:
   m_ObjectHideFlags: 0
@@ -9545,6 +9463,21 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1166959606789359409, guid: 7e45a16554eb55c45a24fa1816772564,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6480586346754968524, guid: 7e45a16554eb55c45a24fa1816772564,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7304010210926964503, guid: 7e45a16554eb55c45a24fa1816772564,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8012447209693625792, guid: 7e45a16554eb55c45a24fa1816772564,
         type: 3}
       propertyPath: m_RootOrder
@@ -9760,6 +9693,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1157324342}
   - component: {fileID: 1157324343}
+  - component: {fileID: 1157324344}
   m_Layer: 5
   m_Name: Slider
   m_TagString: Untagged
@@ -9839,6 +9773,19 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1157324344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1157324341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42707a6f616d4c747b3e91ab4278ef75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sl: {fileID: 1157324343}
 --- !u!1 &1178928016
 GameObject:
   m_ObjectHideFlags: 0
