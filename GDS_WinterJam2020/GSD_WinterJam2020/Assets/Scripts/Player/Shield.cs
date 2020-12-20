@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Shield : MonoBehaviour {
+    private AudioManager.AudioManager audioManager;
+    private void Awake()
+    {
+        audioManager = AudioManager.AudioManager.m_instance;
+    }
     private void OnTriggerEnter2D(Collider2D collision) {
         GameObject otherObj = collision.gameObject;
         Debug.Log("Shield hit, tag: " + otherObj.tag);
@@ -17,8 +22,10 @@ public class Shield : MonoBehaviour {
                 player.addAmmo();
                 player.resetShield();
                 player.reduceShieldCD();
+                audioManager.PlayOneShotSFX(7);
 
                 Destroy(otherObj);
+
             }
         }
     }
