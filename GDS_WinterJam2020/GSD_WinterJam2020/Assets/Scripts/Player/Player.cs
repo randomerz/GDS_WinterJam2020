@@ -235,8 +235,10 @@ public class Player : MonoBehaviour
 
     public void damage()
     {
-        HP -= 1;
-        flashTimer.reset();
+        if (state == State.Parrying) {
+            HP -= 1;
+            flashTimer.reset();
+        }
     }
 
     public void gainHP(int hp)
