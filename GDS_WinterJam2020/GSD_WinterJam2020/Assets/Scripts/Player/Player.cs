@@ -305,7 +305,7 @@ public class Player : MonoBehaviour
     {
         dashAbility.update(Time.deltaTime);
         parryAbility.update(Time.deltaTime);
-        if (parryAbility.isFinished() && !parrySoundPlayed)
+        if (parryAbility.isAvailable() && !parrySoundPlayed)
         {
             parrySoundPlayed = true;
             audioManager.PlayOneShotSFX(6);
