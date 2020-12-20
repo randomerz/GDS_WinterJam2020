@@ -5085,9 +5085,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ammo: 0
-  maxAmmo: 6
+  maxAmmo: 4
   moveSpeed: 5
-  HP: 20
+  HP: 5
   playerAnim: {fileID: 5249408957470549703}
   playerSprite: {fileID: 5249408957470549704}
   turretSpeed: 20
@@ -5107,6 +5107,8 @@ MonoBehaviour:
   turretDeathParticle: {fileID: 274142305913289949, guid: e5b3ee72e97900a4490995f6c411b4d8,
     type: 3}
   wrenchObj: {fileID: 5835189417969910856}
+  canDie: 1
+  gameOverUIPanel: {fileID: 0}
 --- !u!50 &360811813
 Rigidbody2D:
   serializedVersion: 4

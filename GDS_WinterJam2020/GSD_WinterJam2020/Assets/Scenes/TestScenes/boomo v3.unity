@@ -2623,17 +2623,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5249408956337281016, guid: 8dc44c090e8b307d887f8ac2d5b638fe,
-        type: 3}
-      propertyPath: turretSpeed
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 5249408956337281016, guid: 8dc44c090e8b307d887f8ac2d5b638fe,
-        type: 3}
-      propertyPath: turretDeathParticle
-      value: 
-      objectReference: {fileID: 274142305913289949, guid: e5b3ee72e97900a4490995f6c411b4d8,
-        type: 3}
     - target: {fileID: 5249408956337281017, guid: 8dc44c090e8b307d887f8ac2d5b638fe,
         type: 3}
       propertyPath: m_RootOrder
@@ -72461,7 +72450,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: /6
+  m_text: /4
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c84d89b754e4e8546a8399fd02f41f6d, type: 2}
   m_sharedMaterial: {fileID: 7593804625516348630, guid: c84d89b754e4e8546a8399fd02f41f6d,

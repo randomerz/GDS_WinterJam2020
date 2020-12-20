@@ -12,6 +12,11 @@ public class UpdateHUD : MonoBehaviour
 
     public Player player;
 
+    private void Awake()
+    {
+        player = GameObject.Find("Player").GetComponent<Player>();
+    }
+
     private void Update()
     {
         SetHealth(player.HP);

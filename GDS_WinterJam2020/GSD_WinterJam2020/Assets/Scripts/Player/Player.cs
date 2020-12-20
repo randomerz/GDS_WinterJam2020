@@ -45,7 +45,7 @@ public class Ability {
 public class Player : MonoBehaviour
 {
     public int ammo = 0;
-    public int maxAmmo = 6;
+    public int maxAmmo = 4;
     private bool canPlaceTurrets = true;
     
     public float moveSpeed = 5.0f;
@@ -84,8 +84,27 @@ public class Player : MonoBehaviour
     public GameObject turretDeathParticle;
     public GameObject wrenchObj;
 
+    public bool canDie = false;
+    public GameObject gameOverUIPanel;
+
     private AudioManager.AudioManager audioManager;
     private bool runningSound = false;
+
+    static Player instance;
+
+    void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this; // In first scene, make us the singleton.
+            DontDestroyOnLoad(gameObject);
+        }
+        else if (instance != this)
+        {
+            instance.gameObject.transform.position = transform.position;
+            Destroy(gameObject); // On reload, singleton already set, so destroy duplicate.
+        }
+    }
 
     void Start()
     {
@@ -95,6 +114,7 @@ public class Player : MonoBehaviour
         //sprite = GameObject.Find("tempPlayerSprite").GetComponent<SpriteRenderer>();
         audioManager = AudioManager.AudioManager.m_instance;
     }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         GameObject other = collision.gameObject;
@@ -259,7 +279,17 @@ public class Player : MonoBehaviour
             flashTimer.reset();
             audioManager.PlaySFX(1);
 
+            if (canDie && HP <= 0)
+            {
+                GameObject.Find("CanvasUI").GetComponent<ActivateGameOverPanel>().ActivatePanel();
+            }
         }
+    }
+
+    public void restartPlayer()
+    {
+        HP = 5;
+        ammo = 4;
     }
 
     public void gainHP(int hp)
@@ -285,10 +315,11 @@ public class Player : MonoBehaviour
     }
 
     public void placeTurret() {
-        // if (ammo >= maxAmmo && canPlaceTurrets) {
-        if (ammo > 0 && canPlaceTurrets) {
-            ammo -= 1;
-            // ammo = 0;
+        if (ammo >= maxAmmo && canPlaceTurrets)
+        {
+            //if (ammo > 0 && canPlaceTurrets) {
+            //ammo -= 1;
+            ammo = 0;
             float rot = wrenchObj.transform.eulerAngles.z * Mathf.Deg2Rad;
             Debug.Log("Before: " + wrenchObj.transform.rotation.z + " After: " + rot);
             Vector3 turretVel = new Vector3(Mathf.Cos(rot), Mathf.Sin(rot), 0.0f) * turretSpeed;
