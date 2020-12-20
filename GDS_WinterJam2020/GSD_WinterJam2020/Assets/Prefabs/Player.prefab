@@ -120,7 +120,7 @@ MonoBehaviour:
     m_audioSource: {fileID: 0}
   - m_name: player_damaged
     m_audioClip: {fileID: 8300000, guid: a5e6f8645baee574993069af3799230c, type: 3}
-    m_looping: 1
+    m_looping: 0
     m_volume: 1
     m_pitch: 1
     m_fadeInSpeed: 0
@@ -130,7 +130,7 @@ MonoBehaviour:
     m_audioSource: {fileID: 0}
   - m_name: turret_shoot
     m_audioClip: {fileID: 8300000, guid: aa323db3eacdafb4e8ebafb5c9dad9b1, type: 3}
-    m_looping: 1
+    m_looping: 0
     m_volume: 1
     m_pitch: 1
     m_fadeInSpeed: 0
@@ -140,7 +140,7 @@ MonoBehaviour:
     m_audioSource: {fileID: 0}
   - m_name: enemy_shoot
     m_audioClip: {fileID: 8300000, guid: aa323db3eacdafb4e8ebafb5c9dad9b1, type: 3}
-    m_looping: 1
+    m_looping: 0
     m_volume: 1
     m_pitch: 0.493
     m_fadeInSpeed: 0
@@ -150,7 +150,7 @@ MonoBehaviour:
     m_audioSource: {fileID: 0}
   - m_name: item_pickup
     m_audioClip: {fileID: 8300000, guid: be3027146315d5c4e935c83fcd2dff33, type: 3}
-    m_looping: 1
+    m_looping: 0
     m_volume: 1
     m_pitch: 1
     m_fadeInSpeed: 0

@@ -247,6 +247,8 @@ public class Player : MonoBehaviour
         if (state != State.Parrying) {
             HP -= 1;
             flashTimer.reset();
+            audioManager.PlaySFX(1);
+
         }
     }
 
