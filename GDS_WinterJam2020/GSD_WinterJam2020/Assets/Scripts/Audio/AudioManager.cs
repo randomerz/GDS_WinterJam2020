@@ -151,6 +151,19 @@ namespace AudioManager
                 return;
             }
         }
+        public void PlayOneShotSFX(int _id)
+        {
+            if (_id >= 0 && _id < m_sfxList.Length)
+            {
+                Debug.Log("Playing sound");
+                m_sfxList[_id].m_audioSource.PlayOneShot(m_sfxList[_id].m_audioSource.clip);
+            }
+            else
+            {
+                Debug.LogError("Didnt find sound");
+                return;
+            }
+        }
         public void PauseSFX(int _id)
         {
             if (_id >= 0 && _id < m_sfxList.Length)

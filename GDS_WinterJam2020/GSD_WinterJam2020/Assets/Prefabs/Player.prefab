@@ -111,7 +111,7 @@ MonoBehaviour:
   - m_name: player_running
     m_audioClip: {fileID: 8300000, guid: d5dfdaf8c7643b140831b8094d6d3c77, type: 3}
     m_looping: 1
-    m_volume: 1
+    m_volume: 0.628
     m_pitch: 1
     m_fadeInSpeed: 0
     m_fadeOutSpeed: 0
@@ -141,8 +141,8 @@ MonoBehaviour:
   - m_name: enemy_shoot
     m_audioClip: {fileID: 8300000, guid: aa323db3eacdafb4e8ebafb5c9dad9b1, type: 3}
     m_looping: 0
-    m_volume: 1
-    m_pitch: 0.493
+    m_volume: 0.073
+    m_pitch: 3
     m_fadeInSpeed: 0
     m_fadeOutSpeed: 0
     m_fade: 0
