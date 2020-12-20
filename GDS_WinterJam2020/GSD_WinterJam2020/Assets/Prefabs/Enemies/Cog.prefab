@@ -136,10 +136,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d86c915c98c6e33908879c4adb037546, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  run_speed: 5
-  walk_speed: 0.5
+  run_speed: 0
+  walk_speed: 0
   walk_radius: 12.5
-  hp: 10
+  hp: 20
 --- !u!1 &8925776498815469906
 GameObject:
   m_ObjectHideFlags: 0
