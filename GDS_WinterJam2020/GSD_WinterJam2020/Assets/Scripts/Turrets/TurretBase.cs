@@ -21,10 +21,12 @@ public class TurretBase : MonoBehaviour
     private Timer fireTimer;
 
     private AimBehavior aimAlgo;
+    public AudioManager.AudioManager audioManager;
 
     // Start is called before the first frame update
     void Start()
     {
+        audioManager = AudioManager.AudioManager.m_instance;
         fireTimer = new Timer(fireRate);
         aimAlgo = new DefaultAim(turnSpeed);
         float randDelay = Random.Range(0.0f, fireRate);
@@ -41,6 +43,17 @@ public class TurretBase : MonoBehaviour
         float angle = (transform.rotation.eulerAngles.z + 90) * Mathf.Deg2Rad;
         Vector3 dir = new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0.0f);
         p.initialize(projectileSpeed, dir, projectileDamage, aimAlgo.getTarget());
+
+
+        switch (team)
+        {
+            case Team.Player:
+                audioManager.PlayOneShotSFX(2);
+                break;
+            case Team.Enemy:
+                audioManager.PlayOneShotSFX(3);
+                break;
+        }
     }
 
     // Update is called once per frame
