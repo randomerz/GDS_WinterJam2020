@@ -87,7 +87,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turnSpeed: 50
-  fireRate: 1
+  fireRate: 1.5
   projectileSpeed: 5
   projectileDamage: 20
   team: 1

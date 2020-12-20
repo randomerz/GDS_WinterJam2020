@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
-  bulletLifetime: 1.5
+  bulletLifetime: 1.75
   team: 0
 --- !u!58 &5360624342345656237
 CircleCollider2D:

@@ -213,8 +213,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6073efe86772a15099cb8236f0cfacfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turnSpeed: 50
-  fireRate: 1
+  turnSpeed: 10
+  fireRate: 3
   projectileSpeed: 20
   projectileDamage: 20
   team: 1
