@@ -19,6 +19,8 @@ namespace AudioManager
         [SerializeField]
         private AudioData m_prevMusic;
 
+        [HideInInspector]
+        public float vol_mult=1;
         private void Awake()
         {
             DontDestroyOnLoad(gameObject);
@@ -108,6 +110,8 @@ namespace AudioManager
 
         private void PlayNextMusicTrack()
         {
+            m_currentMusic.m_audioSource.volume = m_currentMusic.m_volume * vol_mult;
+
             m_currentMusic.m_audioSource.Play();
             /**if (!m_currentMusic.m_fade && m_prevMusic.m_audioSource != null)
             {
@@ -142,7 +146,9 @@ namespace AudioManager
         {
             if (_id >= 0 && _id < m_sfxList.Length)
             {
-                //Debug.Log("Playing sound");
+                Debug.Log("Playing sound");
+                m_sfxList[_id].m_audioSource.volume = m_sfxList[_id].m_volume * vol_mult;
+
                 m_sfxList[_id].m_audioSource.Play();
             }
             else
@@ -156,6 +162,8 @@ namespace AudioManager
             if (_id >= 0 && _id < m_sfxList.Length)
             {
                 Debug.Log("Playing sound");
+                m_sfxList[_id].m_audioSource.volume = m_sfxList[_id].m_volume * vol_mult;
+
                 m_sfxList[_id].m_audioSource.PlayOneShot(m_sfxList[_id].m_audioSource.clip);
             }
             else

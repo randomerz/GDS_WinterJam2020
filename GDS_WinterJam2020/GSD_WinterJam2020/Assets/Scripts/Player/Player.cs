@@ -81,9 +81,6 @@ public class Player : MonoBehaviour
     private AudioManager.AudioManager audioManager;
     private bool runningSound = false;
 
-    public float turretSpeed = 5.0f;
-    public GameObject turretPrefab;
-
     void Start()
     {
         dashAbility = new Ability(dashCooldown, dashTime);
@@ -139,15 +136,13 @@ public class Player : MonoBehaviour
             velocity.z = 0.0f;
         }
 
+        // dash stuff
+
         if (Input.GetKeyDown(KeyCode.Space)) {
             handleDash();
         }
         if (Input.GetKeyDown(KeyCode.LeftShift)) {
             handleParry();
-        }
-
-        if (Input.GetButtonDown("Fire2")) {
-            placeTurret();
         }
 
         switch (state) {
