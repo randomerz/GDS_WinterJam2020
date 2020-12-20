@@ -47,7 +47,6 @@ public class Player : MonoBehaviour
     public int ammo = 0;
     public int maxAmmo = 4;
     public bool canPlaceTurrets = true;
-    
     public float moveSpeed = 5.0f;
 
     public int HP = 5;
@@ -66,6 +65,8 @@ public class Player : MonoBehaviour
 
     public float parryTime = 0.25f;
     public float parryCooldown = 5.0f;
+    private bool parrySoundPlayed = true;
+
     public GameObject shield;
     private Ability parryAbility;
 
@@ -251,7 +252,7 @@ public class Player : MonoBehaviour
 
     void handleParry() {
         if (state != State.Dashing && parryAbility.isAvailable()) {
-            
+            parrySoundPlayed = false;
             parryAbility.reset();
 
             GameObject shieldInstance = 
@@ -304,6 +305,12 @@ public class Player : MonoBehaviour
     {
         dashAbility.update(Time.deltaTime);
         parryAbility.update(Time.deltaTime);
+        if (parryAbility.isFinished() && !parrySoundPlayed)
+        {
+            parrySoundPlayed = true;
+            audioManager.PlayOneShotSFX(6);
+        }
+
         flashTimer.update(Time.deltaTime);
         transform.position += velocity * Time.deltaTime;
         updateColor();
