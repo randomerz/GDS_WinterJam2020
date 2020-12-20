@@ -17,6 +17,7 @@ public class EnemyBase : MonoBehaviour {
     {
         vel = new Vector3(0.0f, 0.0f, 0.0f);
         player = GameObject.Find("Player");
+        run_speed += Random.Range(-run_speed / 10.0f, run_speed / 10.0f);
     }
 
     // Update is called once per frame

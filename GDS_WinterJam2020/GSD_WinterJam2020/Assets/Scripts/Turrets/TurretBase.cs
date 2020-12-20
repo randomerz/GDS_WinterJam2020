@@ -27,6 +27,8 @@ public class TurretBase : MonoBehaviour
     {
         fireTimer = new Timer(fireRate);
         aimAlgo = new DefaultAim(turnSpeed);
+        float randDelay = Random.Range(0.0f, fireRate);
+        fireTimer.addTime(randDelay);
     }
 
     void shoot() {

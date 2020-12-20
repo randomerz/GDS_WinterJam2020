@@ -38,6 +38,10 @@ public class BasicProjectile : Projectile {
     private void OnTriggerEnter2D(Collider2D collision) {
         GameObject otherObj = collision.gameObject;
 
+        if (otherObj.tag == "Enemy") {
+            return;
+        }
+
         switch (team) {
             case Team.Player:
                 if (otherObj.tag != "Player") {

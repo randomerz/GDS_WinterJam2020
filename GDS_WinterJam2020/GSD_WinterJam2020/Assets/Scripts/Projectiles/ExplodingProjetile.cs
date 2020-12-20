@@ -16,6 +16,10 @@ public class ExplodingProjetile : BasicProjectile {
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {
+        if (collision.gameObject.tag == "Enemy") {
+            return;
+        }
+
         LayerMask mask = LayerMask.GetMask("Mobs");
 
         Collider2D[] overlaps = Physics2D.OverlapCircleAll(transform.position, explosionRadius, mask);

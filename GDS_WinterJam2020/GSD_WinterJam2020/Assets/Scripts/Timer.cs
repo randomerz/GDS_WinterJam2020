@@ -27,5 +27,9 @@ public class Timer {
         timeRemaining = startTime;
     }
 
+    public void addTime(float t) {
+        timeRemaining += t;
+    }
+
     public float progress() => timeRemaining / startTime;
 }

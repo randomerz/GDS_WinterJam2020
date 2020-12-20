@@ -238,6 +238,7 @@ GameObject:
   - component: {fileID: 5202816382296718412}
   - component: {fileID: 2719870819397921188}
   - component: {fileID: 3481350004588945830}
+  - component: {fileID: -1150402659436919974}
   m_Layer: 8
   m_Name: GreenSlime
   m_TagString: Enemy
@@ -311,3 +312,24 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -0.0024008155}
   serializedVersion: 2
   m_Radius: 0.3607543
+--- !u!50 &-1150402659436919974
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3924230996666372922}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
