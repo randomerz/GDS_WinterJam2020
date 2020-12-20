@@ -91,6 +91,8 @@ public class Player : MonoBehaviour
     public bool canDie = false;
     public GameObject gameOverUIPanel;
 
+    public float startTime;
+
     private AudioManager.AudioManager audioManager;
     private bool runningSound = false;
 
@@ -102,6 +104,7 @@ public class Player : MonoBehaviour
         {
             instance = this; // In first scene, make us the singleton.
             DontDestroyOnLoad(gameObject);
+            startTime = Time.time;
         }
         else if (instance != this)
         {
