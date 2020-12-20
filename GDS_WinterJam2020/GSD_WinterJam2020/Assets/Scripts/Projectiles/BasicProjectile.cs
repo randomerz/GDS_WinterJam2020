@@ -38,11 +38,11 @@ public class BasicProjectile : Projectile {
     private void OnTriggerEnter2D(Collider2D collision) {
         GameObject otherObj = collision.gameObject;
 
-        if (team == Team.Enemy && otherObj.tag == "Enemy") {
+        if ((team == Team.Enemy && otherObj.tag == "Enemy")
+                || (team == Team.Player && (otherObj.tag == "Turret" || otherObj.tag == "Player"))) {
             return;
         }
 
-        Debug.Log("aaa");
         switch (team) {
             case Team.Player:
                 if (otherObj.tag == "Enemy") {
@@ -59,6 +59,7 @@ public class BasicProjectile : Projectile {
                 }
                 break;
         }
+
         Destroy(gameObject);
     }
 }
