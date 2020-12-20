@@ -11,4 +11,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Final/Tutorial.unity
     guid: 939edbf4dff85164ca5dac006f6111d7
+  - enabled: 1
+    path: Assets/Scenes/TestScenes/boomo v3.unity
+    guid: ed93df4a0755f2c43932f72a48b10b0d
+  - enabled: 1
+    path: Assets/Scenes/Final/FinalLevel.unity
+    guid: e07a9f0aa9fb3504fbc54b5cc19e8786
+  - enabled: 1
+    path: Assets/Scenes/Final/GameWin.unity
+    guid: 040082e39bc766d4791f9badea710e79
   m_configObjects: {}

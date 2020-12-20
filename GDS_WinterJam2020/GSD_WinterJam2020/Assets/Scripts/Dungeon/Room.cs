@@ -17,6 +17,9 @@ public class Room : MonoBehaviour
     public bool isOpen = true;
     public bool isLocked = false;
     public bool isExplored = false;
+    public bool dropHeartOnFinish = false;
+
+    public GameObject heartDrop;
 
     void Awake()
     {
@@ -54,6 +57,10 @@ public class Room : MonoBehaviour
                 finishedWaves = true;
                 GameObject.Find("Player").GetComponent<Player>().canPlaceTurrets = false;
                 GameObject.Find("Player").GetComponent<Player>().destroyAllTurrets();
+                if (dropHeartOnFinish)
+                {
+                    Instantiate(heartDrop, transform.position, transform.rotation);
+                }
             }
         }
     }

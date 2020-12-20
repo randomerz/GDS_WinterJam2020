@@ -158,6 +158,46 @@ MonoBehaviour:
     m_fade: 0
     m_object: {fileID: 0}
     m_audioSource: {fileID: 0}
+  - m_name: parry
+    m_audioClip: {fileID: 8300000, guid: 89037d6f4ef83f442ba3f1aad6e6924c, type: 3}
+    m_looping: 0
+    m_volume: 1
+    m_pitch: 1
+    m_fadeInSpeed: 0
+    m_fadeOutSpeed: 0
+    m_fade: 0
+    m_object: {fileID: 0}
+    m_audioSource: {fileID: 0}
+  - m_name: parry_reset
+    m_audioClip: {fileID: 8300000, guid: 16c96461fec884847810cdf59f492bdd, type: 3}
+    m_looping: 0
+    m_volume: 1
+    m_pitch: 1
+    m_fadeInSpeed: 0
+    m_fadeOutSpeed: 0
+    m_fade: 0
+    m_object: {fileID: 0}
+    m_audioSource: {fileID: 0}
+  - m_name: deflect_success
+    m_audioClip: {fileID: 8300000, guid: 95cc07a857667d14a9a12ca8521956ee, type: 3}
+    m_looping: 0
+    m_volume: 1
+    m_pitch: 1
+    m_fadeInSpeed: 0
+    m_fadeOutSpeed: 0
+    m_fade: 0
+    m_object: {fileID: 0}
+    m_audioSource: {fileID: 0}
+  - m_name: player_dash
+    m_audioClip: {fileID: 8300000, guid: cc08ea10150675c49b6c19d6ca6aaad5, type: 3}
+    m_looping: 0
+    m_volume: 1
+    m_pitch: 1
+    m_fadeInSpeed: 0
+    m_fadeOutSpeed: 0
+    m_fade: 0
+    m_object: {fileID: 0}
+    m_audioSource: {fileID: 0}
   m_currentMusic:
     m_name: bg
     m_audioClip: {fileID: 8300000, guid: f9c428db8f9f69641839ab8f4d478678, type: 3}
@@ -5086,8 +5126,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ammo: 0
   maxAmmo: 4
+  canPlaceTurrets: 1
   moveSpeed: 5
-  HP: 5
+  HP: 7
   playerAnim: {fileID: 5249408957470549703}
   playerSprite: {fileID: 5249408957470549704}
   turretSpeed: 25
@@ -5096,7 +5137,7 @@ MonoBehaviour:
   dashTime: 0.25
   dashCooldown: 0
   parryTime: 0.35
-  parryCooldown: 1.25
+  parryCooldown: 1.5
   shield: {fileID: 6432990517456392168, guid: 0328745a09cde0ca4b79de74fc855917, type: 3}
   dashDamping: 0.99
   runDamping: 0.5

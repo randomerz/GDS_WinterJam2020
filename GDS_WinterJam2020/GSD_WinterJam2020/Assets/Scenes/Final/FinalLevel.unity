@@ -2070,6 +2070,8 @@ MonoBehaviour:
   isOpen: 1
   isLocked: 0
   isExplored: 1
+  dropHeartOnFinish: 0
+  heartDrop: {fileID: 0}
 --- !u!1001 &505926734
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3207,7 +3209,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1370542435}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &739580760
 MonoBehaviour:
@@ -4131,6 +4133,9 @@ MonoBehaviour:
   isOpen: 1
   isLocked: 0
   isExplored: 0
+  dropHeartOnFinish: 1
+  heartDrop: {fileID: 2691226656644081726, guid: c48ff9db08f120447b6fc687a21a47a6,
+    type: 3}
 --- !u!1001 &956146720
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4782,6 +4787,7 @@ GameObject:
   - component: {fileID: 1032961665}
   - component: {fileID: 1032961667}
   - component: {fileID: 1032961666}
+  - component: {fileID: 1032961669}
   - component: {fileID: 1032961668}
   m_Layer: 0
   m_Name: WinLevel
@@ -4822,9 +4828,9 @@ MonoBehaviour:
   myEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: cf32e828975467d4ba21ac66d1e8ea63, type: 3}
-        m_MethodName: set_name
-        m_Mode: 5
+      - m_Target: {fileID: 1032961669}
+        m_MethodName: LoadLevel
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4900,6 +4906,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &1032961669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1032961664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf32e828975467d4ba21ac66d1e8ea63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelName: GameWin
 --- !u!1 &1061684589 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5962195295168246236, guid: 54f73b50f517dcd42b7f68e8e988cd5d,
@@ -5004,6 +5023,9 @@ MonoBehaviour:
   isOpen: 1
   isLocked: 0
   isExplored: 0
+  dropHeartOnFinish: 1
+  heartDrop: {fileID: 2691226656644081726, guid: c48ff9db08f120447b6fc687a21a47a6,
+    type: 3}
 --- !u!61 &1079265238
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5440,6 +5462,8 @@ MonoBehaviour:
   isOpen: 1
   isLocked: 0
   isExplored: 1
+  dropHeartOnFinish: 0
+  heartDrop: {fileID: 0}
 --- !u!1001 &1163204453
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5762,6 +5786,8 @@ MonoBehaviour:
   isOpen: 1
   isLocked: 0
   isExplored: 1
+  dropHeartOnFinish: 0
+  heartDrop: {fileID: 0}
 --- !u!1 &1212389979
 GameObject:
   m_ObjectHideFlags: 0
@@ -18056,7 +18082,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1370542435}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1353819488
 MonoBehaviour:
@@ -18346,8 +18372,8 @@ Transform:
   m_Children:
   - {fileID: 1032961665}
   - {fileID: 1459992455}
-  - {fileID: 739580759}
   - {fileID: 1353819487}
+  - {fileID: 739580759}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -19174,6 +19200,8 @@ MonoBehaviour:
   isOpen: 1
   isLocked: 0
   isExplored: 1
+  dropHeartOnFinish: 0
+  heartDrop: {fileID: 0}
 --- !u!1001 &1576665611
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19925,6 +19953,9 @@ MonoBehaviour:
   isOpen: 1
   isLocked: 0
   isExplored: 0
+  dropHeartOnFinish: 1
+  heartDrop: {fileID: 2691226656644081726, guid: c48ff9db08f120447b6fc687a21a47a6,
+    type: 3}
 --- !u!198 &1732557438 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 8177833491818114081, guid: 54f73b50f517dcd42b7f68e8e988cd5d,
@@ -20013,6 +20044,8 @@ MonoBehaviour:
   isOpen: 0
   isLocked: 1
   isExplored: 1
+  dropHeartOnFinish: 0
+  heartDrop: {fileID: 0}
 --- !u!1 &1741346825 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8776664816694624696, guid: 1641a4501adabc7468fa1fd94eaaf255,
@@ -20142,6 +20175,9 @@ MonoBehaviour:
   isOpen: 1
   isLocked: 0
   isExplored: 0
+  dropHeartOnFinish: 1
+  heartDrop: {fileID: 2691226656644081726, guid: c48ff9db08f120447b6fc687a21a47a6,
+    type: 3}
 --- !u!1 &1758970386
 GameObject:
   m_ObjectHideFlags: 0
@@ -40331,6 +40367,9 @@ MonoBehaviour:
   isOpen: 1
   isLocked: 0
   isExplored: 0
+  dropHeartOnFinish: 1
+  heartDrop: {fileID: 2691226656644081726, guid: c48ff9db08f120447b6fc687a21a47a6,
+    type: 3}
 --- !u!4 &1799501428
 Transform:
   m_ObjectHideFlags: 0
@@ -41143,6 +41182,9 @@ MonoBehaviour:
   isOpen: 1
   isLocked: 0
   isExplored: 0
+  dropHeartOnFinish: 1
+  heartDrop: {fileID: 2691226656644081726, guid: c48ff9db08f120447b6fc687a21a47a6,
+    type: 3}
 --- !u!1 &2025595857 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8925776498305054865, guid: 48741101b3168fce4b3d4b5aa92262a1,

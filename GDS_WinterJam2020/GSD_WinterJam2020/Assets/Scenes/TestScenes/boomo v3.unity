@@ -1580,6 +1580,8 @@ MonoBehaviour:
   isOpen: 1
   isLocked: 0
   isExplored: 1
+  dropHeartOnFinish: 0
+  heartDrop: {fileID: 0}
 --- !u!1 &526309636
 GameObject:
   m_ObjectHideFlags: 0
@@ -2624,89 +2626,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1672571536, guid: 8dc44c090e8b307d887f8ac2d5b638fe, type: 3}
-      propertyPath: m_sfxList.Array.size
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 1672571536, guid: 8dc44c090e8b307d887f8ac2d5b638fe, type: 3}
-      propertyPath: m_sfxList.Array.data[5].m_name
-      value: parry
-      objectReference: {fileID: 0}
-    - target: {fileID: 1672571536, guid: 8dc44c090e8b307d887f8ac2d5b638fe, type: 3}
-      propertyPath: m_sfxList.Array.data[6].m_name
-      value: parry_reset
-      objectReference: {fileID: 0}
-    - target: {fileID: 1672571536, guid: 8dc44c090e8b307d887f8ac2d5b638fe, type: 3}
-      propertyPath: m_sfxList.Array.data[7].m_name
-      value: deflect_success
-      objectReference: {fileID: 0}
-    - target: {fileID: 1672571536, guid: 8dc44c090e8b307d887f8ac2d5b638fe, type: 3}
-      propertyPath: m_sfxList.Array.data[8].m_name
-      value: player_dash
-      objectReference: {fileID: 0}
-    - target: {fileID: 1672571536, guid: 8dc44c090e8b307d887f8ac2d5b638fe, type: 3}
-      propertyPath: m_sfxList.Array.data[5].m_pitch
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1672571536, guid: 8dc44c090e8b307d887f8ac2d5b638fe, type: 3}
-      propertyPath: m_sfxList.Array.data[6].m_pitch
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1672571536, guid: 8dc44c090e8b307d887f8ac2d5b638fe, type: 3}
-      propertyPath: m_sfxList.Array.data[7].m_pitch
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1672571536, guid: 8dc44c090e8b307d887f8ac2d5b638fe, type: 3}
-      propertyPath: m_sfxList.Array.data[8].m_pitch
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1672571536, guid: 8dc44c090e8b307d887f8ac2d5b638fe, type: 3}
-      propertyPath: m_sfxList.Array.data[5].m_volume
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1672571536, guid: 8dc44c090e8b307d887f8ac2d5b638fe, type: 3}
-      propertyPath: m_sfxList.Array.data[6].m_volume
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1672571536, guid: 8dc44c090e8b307d887f8ac2d5b638fe, type: 3}
-      propertyPath: m_sfxList.Array.data[7].m_volume
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1672571536, guid: 8dc44c090e8b307d887f8ac2d5b638fe, type: 3}
-      propertyPath: m_sfxList.Array.data[8].m_volume
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1672571536, guid: 8dc44c090e8b307d887f8ac2d5b638fe, type: 3}
-      propertyPath: m_sfxList.Array.data[5].m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 89037d6f4ef83f442ba3f1aad6e6924c, type: 3}
-    - target: {fileID: 1672571536, guid: 8dc44c090e8b307d887f8ac2d5b638fe, type: 3}
-      propertyPath: m_sfxList.Array.data[6].m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 16c96461fec884847810cdf59f492bdd, type: 3}
-    - target: {fileID: 1672571536, guid: 8dc44c090e8b307d887f8ac2d5b638fe, type: 3}
-      propertyPath: m_sfxList.Array.data[7].m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 95cc07a857667d14a9a12ca8521956ee, type: 3}
-    - target: {fileID: 1672571536, guid: 8dc44c090e8b307d887f8ac2d5b638fe, type: 3}
-      propertyPath: m_sfxList.Array.data[8].m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: cc08ea10150675c49b6c19d6ca6aaad5, type: 3}
-    - target: {fileID: 5249408956337281016, guid: 8dc44c090e8b307d887f8ac2d5b638fe,
-        type: 3}
-      propertyPath: HP
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 5249408956337281016, guid: 8dc44c090e8b307d887f8ac2d5b638fe,
-        type: 3}
-      propertyPath: parryTime
-      value: 0.35
-      objectReference: {fileID: 0}
-    - target: {fileID: 5249408956337281016, guid: 8dc44c090e8b307d887f8ac2d5b638fe,
-        type: 3}
-      propertyPath: parryCooldown
-      value: 1.5
-      objectReference: {fileID: 0}
     - target: {fileID: 5249408956337281017, guid: 8dc44c090e8b307d887f8ac2d5b638fe,
         type: 3}
       propertyPath: m_RootOrder
@@ -60238,6 +60157,9 @@ MonoBehaviour:
   isOpen: 1
   isLocked: 0
   isExplored: 0
+  dropHeartOnFinish: 0
+  heartDrop: {fileID: 2691226656644081726, guid: c48ff9db08f120447b6fc687a21a47a6,
+    type: 3}
 --- !u!1001 &981402668
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -60542,6 +60464,7 @@ GameObject:
   - component: {fileID: 1032961667}
   - component: {fileID: 1032961666}
   - component: {fileID: 1032961668}
+  - component: {fileID: 1032961669}
   m_Layer: 0
   m_Name: WinLevel
   m_TagString: Untagged
@@ -60581,9 +60504,9 @@ MonoBehaviour:
   myEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1032961666}
-        m_MethodName: PrintString
-        m_Mode: 0
+      - m_Target: {fileID: 1032961669}
+        m_MethodName: LoadLevel
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -60659,6 +60582,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &1032961669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1032961664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf32e828975467d4ba21ac66d1e8ea63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelName: FinalLevel
 --- !u!1001 &1048497324
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -60845,6 +60781,9 @@ MonoBehaviour:
   isOpen: 1
   isLocked: 0
   isExplored: 0
+  dropHeartOnFinish: 0
+  heartDrop: {fileID: 2691226656644081726, guid: c48ff9db08f120447b6fc687a21a47a6,
+    type: 3}
 --- !u!61 &1079265237
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -61127,6 +61066,8 @@ MonoBehaviour:
   isOpen: 1
   isLocked: 0
   isExplored: 1
+  dropHeartOnFinish: 0
+  heartDrop: {fileID: 0}
 --- !u!1001 &1200440849
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -61287,6 +61228,8 @@ MonoBehaviour:
   isOpen: 1
   isLocked: 0
   isExplored: 1
+  dropHeartOnFinish: 0
+  heartDrop: {fileID: 0}
 --- !u!1001 &1209538995
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -73481,6 +73424,8 @@ MonoBehaviour:
   isOpen: 1
   isLocked: 0
   isExplored: 1
+  dropHeartOnFinish: 0
+  heartDrop: {fileID: 0}
 --- !u!1 &1532676476 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8776664816166163852, guid: 1641a4501adabc7468fa1fd94eaaf255,
@@ -73939,6 +73884,9 @@ MonoBehaviour:
   isOpen: 1
   isLocked: 0
   isExplored: 0
+  dropHeartOnFinish: 1
+  heartDrop: {fileID: 2691226656644081726, guid: c48ff9db08f120447b6fc687a21a47a6,
+    type: 3}
 --- !u!198 &1732557438 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 8177833491818114081, guid: 54f73b50f517dcd42b7f68e8e988cd5d,
@@ -74027,6 +73975,8 @@ MonoBehaviour:
   isOpen: 0
   isLocked: 1
   isExplored: 1
+  dropHeartOnFinish: 0
+  heartDrop: {fileID: 0}
 --- !u!1 &1741346825 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8776664816694624696, guid: 1641a4501adabc7468fa1fd94eaaf255,
@@ -86612,6 +86562,9 @@ MonoBehaviour:
   isOpen: 1
   isLocked: 0
   isExplored: 0
+  dropHeartOnFinish: 0
+  heartDrop: {fileID: 2691226656644081726, guid: c48ff9db08f120447b6fc687a21a47a6,
+    type: 3}
 --- !u!4 &1799501428
 Transform:
   m_ObjectHideFlags: 0
@@ -87020,6 +86973,9 @@ MonoBehaviour:
   isOpen: 1
   isLocked: 0
   isExplored: 0
+  dropHeartOnFinish: 0
+  heartDrop: {fileID: 2691226656644081726, guid: c48ff9db08f120447b6fc687a21a47a6,
+    type: 3}
 --- !u!1001 &1994313900
 PrefabInstance:
   m_ObjectHideFlags: 0
