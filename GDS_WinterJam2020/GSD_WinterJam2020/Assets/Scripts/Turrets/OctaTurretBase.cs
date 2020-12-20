@@ -4,20 +4,21 @@ using UnityEngine;
 
 public class OctaTurretBase : TurretBase
 {
+    public int num_bullets;
     void shoot() {
         // idk how this works
         fireTimer.reset();
-        //GameObject target = aimAlgo.getTarget();
-        //float angle = ((transform.rotation.eulerAngles.z + 90) * Mathf.Deg2Rad);
-        for (int i = 0; i < 8; i++)
+        GameObject target = aimAlgo.getTarget();
+        float angle = ((transform.rotation.eulerAngles.z + 90) * Mathf.Deg2Rad);
+        for (int i = 0; i < num_bullets; i++)
         {
             Projectile p =
                 Instantiate(projectile, new Vector3(transform.position.x, transform.position.y, 0.5f), Quaternion.identity);
             p.setTeam(team);
 
-            float tmp_angle = i*(Mathf.PI/4);
+            float tmp_angle = 2*i*(Mathf.PI/num_bullets);
             Vector3 dir = new Vector3(Mathf.Cos(tmp_angle), Mathf.Sin(tmp_angle), 0.0f);
-            p.initialize(projectileSpeed, dir, projectileDamage, null);
+            p.initialize(projectileSpeed, dir, projectileDamage, target);
         }
 
         audioManager.PlayOneShotSFX(3);
