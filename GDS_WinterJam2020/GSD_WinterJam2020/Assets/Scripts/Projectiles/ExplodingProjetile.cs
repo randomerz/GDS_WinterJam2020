@@ -16,7 +16,7 @@ public class ExplodingProjetile : BasicProjectile {
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {
-        if (collision.gameObject.tag == "Enemy") {
+        if (team == Team.Enemy && collision.gameObject.tag == "Enemy") {
             return;
         }
 

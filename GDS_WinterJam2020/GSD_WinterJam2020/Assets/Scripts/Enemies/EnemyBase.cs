@@ -8,6 +8,8 @@ public class EnemyBase : MonoBehaviour {
     public float walk_speed = 0.5f;
     public float walk_radius = 12.5f;
 
+    public int hp = 10;
+
     private Vector3 vel;
 
     private GameObject player;
@@ -26,6 +28,10 @@ public class EnemyBase : MonoBehaviour {
 
         vel = radius.normalized;
         vel *= (radius.magnitude > walk_radius) ? run_speed : walk_speed;
+
+        if (hp <= 0) {
+            gameObject.SetActive(false);
+        }
     }
 
     void FixedUpdate() {

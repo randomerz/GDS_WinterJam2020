@@ -5089,7 +5089,7 @@ MonoBehaviour:
   HP: 20
   playerAnim: {fileID: 5249408957470549703}
   playerSprite: {fileID: 5249408957470549704}
-  turretSpeed: 0
+  turretSpeed: 20
   turretPrefab: {fileID: 3729212530189596604, guid: 8acefdb6a0acf0d0d9f6ac64012bbac0,
     type: 3}
   dashTime: 0.25

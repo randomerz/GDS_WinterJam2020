@@ -146,7 +146,6 @@ namespace AudioManager
         {
             if (_id >= 0 && _id < m_sfxList.Length)
             {
-                Debug.Log("Playing sound");
                 m_sfxList[_id].m_audioSource.volume = m_sfxList[_id].m_volume * vol_mult;
 
                 m_sfxList[_id].m_audioSource.Play();
@@ -161,7 +160,6 @@ namespace AudioManager
         {
             if (_id >= 0 && _id < m_sfxList.Length)
             {
-                Debug.Log("Playing sound");
                 m_sfxList[_id].m_audioSource.volume = m_sfxList[_id].m_volume * vol_mult;
 
                 m_sfxList[_id].m_audioSource.PlayOneShot(m_sfxList[_id].m_audioSource.clip);

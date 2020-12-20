@@ -24,30 +24,38 @@ public class TurretAim : AimBehavior
     public override GameObject getTarget() {
         refreshTargetsList();
 
-        float minDist = Mathf.NegativeInfinity;
-        GameObject closestEnemy = targets[0];
+        if (targets.Count > 0) {
+            float minDist = Mathf.NegativeInfinity;
+            GameObject closestEnemy = targets[0];
 
-        foreach (GameObject e in targets) {
-            float dist = (e.transform.position - transform.position).magnitude;
-            if (dist < minDist) {
-                minDist = dist;
-                closestEnemy = e;
+            foreach (GameObject e in targets) {
+                float dist = (e.transform.position - transform.position).magnitude;
+                if (dist < minDist) {
+                    minDist = dist;
+                    closestEnemy = e;
+                }
             }
+
+            return closestEnemy;
         }
 
-        return closestEnemy;
+        return null;
     }
 
     public override float getAngle(Transform transform)
     {
         GameObject target = getTarget();
 
-        float angle = 
-            Mathf.Atan2(
-                    target.transform.position.y - transform.position.y, 
-                    target.transform.position.x -transform.position.x ) 
-            * Mathf.Rad2Deg;
+        if (target != null) {
+            float angle = 
+                Mathf.Atan2(
+                        target.transform.position.y - transform.position.y, 
+                        target.transform.position.x -transform.position.x ) 
+                * Mathf.Rad2Deg;
 
-        return angle - 90.0f;
+            return angle - 90.0f;
+        } else {
+            return 0.0f;
+        }
     }
 }

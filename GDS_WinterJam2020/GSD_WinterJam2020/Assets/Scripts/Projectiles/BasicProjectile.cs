@@ -38,19 +38,20 @@ public class BasicProjectile : Projectile {
     private void OnTriggerEnter2D(Collider2D collision) {
         GameObject otherObj = collision.gameObject;
 
-        if (otherObj.tag == "Enemy") {
+        if (team == Team.Enemy && otherObj.tag == "Enemy") {
             return;
         }
 
+        Debug.Log("aaa");
         switch (team) {
             case Team.Player:
-                if (otherObj.tag != "Player") {
-                    // damage enemies
+                if (otherObj.tag == "Enemy") {
+                    EnemyBase enemy = otherObj.GetComponent<EnemyBase>();
+                    enemy.hp -= (int) damage;
                 }
                 break;
             case Team.Enemy:
-                Debug.Log("Hit");
-                if (otherObj.tag != "Enemy") {
+                if (otherObj.tag == "Player") {
                     Player player = otherObj.GetComponent<Player>();
                     if (player != null) {
                         player.damage();
