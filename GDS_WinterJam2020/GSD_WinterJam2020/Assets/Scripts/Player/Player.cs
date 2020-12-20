@@ -10,8 +10,8 @@ public enum State {
 }
 
 public class Ability {
-    private Timer cooldownTimer;
-    private Timer durationTimer;
+    public Timer cooldownTimer;
+    public Timer durationTimer;
     
 
     public Ability(float cooldown, float duration) {
@@ -274,7 +274,7 @@ public class Player : MonoBehaviour
 
     public void damage()
     {
-        if (state != State.Parrying) {
+        if (state != State.Parrying && flashTimer.isFinished()) {
             HP -= 1;
             flashTimer.reset();
             audioManager.PlaySFX(1);
@@ -314,6 +314,10 @@ public class Player : MonoBehaviour
         parryAbility.reset();
     }
 
+    public void reduceShieldCD() {
+        parryAbility.cooldownTimer.timeRemaining /= 2;
+    }
+
     public void placeTurret() {
         if (ammo >= maxAmmo && canPlaceTurrets)
         {
@@ -347,7 +351,7 @@ public class Player : MonoBehaviour
     private IEnumerator refillAmmoCount()
     {
         canPlaceTurrets = false;
-        while (ammo < maxAmmo)
+        while (ammo < maxAmmo / 2)
         {
             ammo += 1;
             yield return new WaitForSeconds(.1f);

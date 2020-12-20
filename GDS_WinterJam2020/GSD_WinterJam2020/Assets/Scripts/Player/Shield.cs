@@ -16,6 +16,7 @@ public class Shield : MonoBehaviour {
 
                 player.addAmmo();
                 player.resetShield();
+                player.reduceShieldCD();
 
                 Destroy(otherObj);
             }

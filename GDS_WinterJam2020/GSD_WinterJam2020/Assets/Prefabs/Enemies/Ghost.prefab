@@ -213,9 +213,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6073efe86772a15099cb8236f0cfacfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turnSpeed: 50
+  turnSpeed: 5
   fireRate: 1
-  projectileSpeed: 20
+  projectileSpeed: 10
   projectileDamage: 20
   team: 1
   projectile: {fileID: 3270687611607728660, guid: a6195c3b7897e60b79e7603f9b353c97,
