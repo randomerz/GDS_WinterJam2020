@@ -308,6 +308,7 @@ public class Player : MonoBehaviour
     public void gainHP(int hp)
     {
         HP += 1;
+        audioManager.PlayOneShotSFX(4);
     }
 
     private void FixedUpdate()
