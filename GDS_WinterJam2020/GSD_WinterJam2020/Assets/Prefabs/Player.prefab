@@ -130,9 +130,9 @@ MonoBehaviour:
     m_audioSource: {fileID: 0}
   - m_name: turret_shoot
     m_audioClip: {fileID: 8300000, guid: aa323db3eacdafb4e8ebafb5c9dad9b1, type: 3}
-    m_looping: 0
-    m_volume: 1
-    m_pitch: 1
+    m_looping: 1
+    m_volume: 0.104
+    m_pitch: 2.278
     m_fadeInSpeed: 0
     m_fadeOutSpeed: 0
     m_fade: 0
@@ -180,6 +180,7 @@ MonoBehaviour:
     m_fade: 0
     m_object: {fileID: 0}
     m_audioSource: {fileID: 0}
+  vol_mult: 1
 --- !u!1 &4629356917144526401
 GameObject:
   m_ObjectHideFlags: 0
