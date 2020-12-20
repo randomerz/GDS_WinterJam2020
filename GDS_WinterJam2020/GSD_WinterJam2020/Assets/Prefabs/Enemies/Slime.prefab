@@ -9,6 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8012447209693625792}
+  - component: {fileID: 6480586346754968524}
+  - component: {fileID: 1166959606789359409}
+  - component: {fileID: 7304010210926964503}
   m_Layer: 8
   m_Name: Slime
   m_TagString: Enemy
@@ -33,6 +36,56 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6480586346754968524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8012447209693625793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d86c915c98c6e33908879c4adb037546, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  run_speed: 5
+  walk_speed: 0.5
+  walk_radius: 12.5
+  hp: 10
+--- !u!114 &1166959606789359409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8012447209693625793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6073efe86772a15099cb8236f0cfacfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turnSpeed: 50
+  fireRate: 1
+  projectileSpeed: 20
+  projectileDamage: 20
+  team: 0
+  projectile: {fileID: 7840938328587096668, guid: 536082233323486619fa4761c957423a,
+    type: 3}
+  aimAlgo: {fileID: 7304010210926964503}
+  audioManager: {fileID: 0}
+--- !u!114 &7304010210926964503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8012447209693625793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 797598ff1c669504387dce0011aee7b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turnSpeed: 0
 --- !u!1 &8012447209799052187
 GameObject:
   m_ObjectHideFlags: 0
