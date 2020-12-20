@@ -6,6 +6,7 @@ public class Room : MonoBehaviour
 {
     public GameObject[] doorsOpen;
     public GameObject[] doorsClose;
+    public ParticleSystem[] doorParticles;
 
     public List<GameObject> enemies1 = new List<GameObject>();
     public List<GameObject> enemies2 = new List<GameObject>();
@@ -16,8 +17,8 @@ public class Room : MonoBehaviour
     public bool isOpen = true;
     public bool isLocked = false;
     public bool isExplored = false;
-    
-    void Start()
+
+    void Awake()
     {
         ChangeDoorState(isOpen);
         foreach (GameObject g in enemies1)
@@ -36,10 +37,9 @@ public class Room : MonoBehaviour
                 if (g.activeSelf)
                     activeEnemy1Count++;
 
-            if (spawnedWave1 && !spawnedWave2  && activeEnemy1Count == 0)
+            if (spawnedWave1 && !spawnedWave2 && activeEnemy1Count == 0)
             {
-                SpawnWave2();
-                spawnedWave1 = true;
+                StartCoroutine(SpawnWave2());
             }
 
             int activeEnemy2Count = 0;
@@ -61,7 +61,7 @@ public class Room : MonoBehaviour
         if (!isExplored)
         {
             ChangeDoorState(false);
-            SpawnWave1();
+            StartCoroutine(SpawnWave1());
         }
         isExplored = true;
     }
@@ -79,8 +79,8 @@ public class Room : MonoBehaviour
             g.SetActive(s);
         foreach (GameObject g in doorsClose)
             g.SetActive(!s);
-        //foreach (ParticleSystem p in doorParticles)
-        //    p.Play();
+        foreach (ParticleSystem p in doorParticles)
+            p.Play();
     }
 
     private IEnumerator ShakeDoorThenOpen()
@@ -107,15 +107,25 @@ public class Room : MonoBehaviour
         ChangeDoorState(true);
     }
 
-    private void SpawnWave1()
+    private IEnumerator SpawnWave1()
     {
+        yield return new WaitForSeconds(.5f);
         foreach (GameObject g in enemies1)
+        {
             g.SetActive(true);
+            yield return new WaitForSeconds(.1f);
+        }
+        spawnedWave1 = true;
     }
 
-    private void SpawnWave2()
+    private IEnumerator SpawnWave2()
     {
+        yield return new WaitForSeconds(.5f);
         foreach (GameObject g in enemies2)
+        {
             g.SetActive(true);
+            yield return new WaitForSeconds(.1f);
+        }
+        spawnedWave2 = true;
     }
 }

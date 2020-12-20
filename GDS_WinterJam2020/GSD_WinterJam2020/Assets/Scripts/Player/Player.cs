@@ -74,7 +74,9 @@ public class Player : MonoBehaviour
     public float flashTime = 0.25f;
     private Timer flashTimer;
 
-    SpriteRenderer sprite;
+    public SpriteRenderer sprite;
+    public ParticleSystem dashParticles;
+    public GameObject wrenchObj;
 
     private AudioManager.AudioManager audioManager;
     private bool runningSound = false;
@@ -84,7 +86,7 @@ public class Player : MonoBehaviour
         dashAbility = new Ability(dashCooldown, dashTime);
         parryAbility = new Ability(parryCooldown, parryTime);
         flashTimer = new Timer(flashTime);
-        sprite = GameObject.Find("tempPlayerSprite").GetComponent<SpriteRenderer>();
+        //sprite = GameObject.Find("tempPlayerSprite").GetComponent<SpriteRenderer>();
         audioManager = AudioManager.AudioManager.m_instance;
     }
     private void OnCollisionEnter2D(Collision2D collision)
@@ -185,11 +187,18 @@ public class Player : MonoBehaviour
         //Debug.Log("1) " + fAngle + " " + (90 < fAngle && fAngle < 270));
 
         playerSprite.flipX = 90 < fAngle && fAngle < 270;
+        wrenchObj.transform.rotation = Quaternion.Euler(0, 0, fAngle);
     }
 
     void setState(State newState) {
         //Debug.Log("switching from " + state + " to " + newState);
 
+        if (newState == State.Dashing)
+        {
+            dashParticles.Play();
+            float rot = Mathf.Atan2(velocity.y, velocity.x) * Mathf.Rad2Deg;
+            dashParticles.gameObject.transform.rotation = Quaternion.Euler(0, 0, rot);
+        }
         if (state == State.Parrying && newState != State.Parrying) {
             GameObject shieldInstance = transform.Find("shield").gameObject;
             Destroy(shieldInstance);
