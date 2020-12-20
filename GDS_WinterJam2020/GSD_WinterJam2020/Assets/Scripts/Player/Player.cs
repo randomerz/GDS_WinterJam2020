@@ -133,6 +133,10 @@ public class Player : MonoBehaviour
             velocity.y += Input.GetAxisRaw("Vertical") * moveSpeed;
         }
 
+        if (Input.GetButtonDown("Fire2")) {
+            placeTurret();
+        }
+
         if (velocity.magnitude <= 0.05f) {
             velocity.x = 0.0f;
             velocity.y = 0.0f;

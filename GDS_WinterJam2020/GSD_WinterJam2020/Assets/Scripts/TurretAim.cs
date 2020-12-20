@@ -7,6 +7,10 @@ public class TurretAim : AimBehavior
     private List<GameObject> targets = new List<GameObject>();
     public float turnSpeed = 50.0f;
 
+    void Start() {
+        targets = new List<GameObject>();
+    }
+
     public TurretAim(float turnSpeed) {
         this.turnSpeed = turnSpeed;
     }
