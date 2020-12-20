@@ -100,7 +100,7 @@ MonoBehaviour:
   - m_name: bg
     m_audioClip: {fileID: 8300000, guid: f9c428db8f9f69641839ab8f4d478678, type: 3}
     m_looping: 1
-    m_volume: 0.3
+    m_volume: 0.15
     m_pitch: 1
     m_fadeInSpeed: 0
     m_fadeOutSpeed: 0
@@ -195,7 +195,7 @@ MonoBehaviour:
   dashTime: 0.5
   dashCooldown: 0
   parryTime: 0.25
-  parryCooldown: 5
+  parryCooldown: 3
   shield: {fileID: 6432990517456392168, guid: 0328745a09cde0ca4b79de74fc855917, type: 3}
   dashDamping: 0.96
   runDamping: 0.5

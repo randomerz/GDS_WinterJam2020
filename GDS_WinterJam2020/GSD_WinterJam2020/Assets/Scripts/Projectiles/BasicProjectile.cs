@@ -33,6 +33,8 @@ public class BasicProjectile : Projectile {
 
     public override Team getTeam() => team;
 
+    public override void setTeam(Team t) => team = t;
+
     private void OnTriggerEnter2D(Collider2D collision) {
         GameObject otherObj = collision.gameObject;
 

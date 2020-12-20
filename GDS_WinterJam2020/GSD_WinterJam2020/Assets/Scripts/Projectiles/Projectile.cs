@@ -10,4 +10,5 @@ public enum Team {
 public abstract class Projectile : MonoBehaviour {
     public abstract void initialize(float speed, Vector3 dir, float damage, GameObject target);
     public abstract Team getTeam();
+    public abstract void setTeam(Team t);
 }

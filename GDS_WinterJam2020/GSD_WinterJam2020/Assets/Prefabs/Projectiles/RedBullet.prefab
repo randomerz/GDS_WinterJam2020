@@ -80,7 +80,7 @@ PrefabInstance:
     - target: {fileID: 2915761747875297720, guid: 536082233323486619fa4761c957423a,
         type: 3}
       propertyPath: m_Name
-      value: SpeedyBullet
+      value: RedBullet
       objectReference: {fileID: 0}
     - target: {fileID: 7840938328587096668, guid: 536082233323486619fa4761c957423a,
         type: 3}

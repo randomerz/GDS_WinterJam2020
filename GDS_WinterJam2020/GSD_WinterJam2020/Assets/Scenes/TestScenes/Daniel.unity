@@ -130,7 +130,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 498314540, guid: 8dc44c090e8b307d887f8ac2d5b638fe, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5249408956337281016, guid: 8dc44c090e8b307d887f8ac2d5b638fe,
+        type: 3}
+      propertyPath: parryTime
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 5249408956337281017, guid: 8dc44c090e8b307d887f8ac2d5b638fe,
         type: 3}
@@ -264,7 +269,7 @@ PrefabInstance:
     - target: {fileID: 5202816382296718412, guid: c9d9025ccb3886f46b2816623c20d742,
         type: 3}
       propertyPath: turnSpeed
-      value: 1000
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c9d9025ccb3886f46b2816623c20d742, type: 3}

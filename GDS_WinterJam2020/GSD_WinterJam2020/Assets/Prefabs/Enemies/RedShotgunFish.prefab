@@ -192,7 +192,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turnSpeed: 100
   fireRate: 1
-  projectileSpeed: 20
+  projectileSpeed: 10
   projectileDamage: 20
   team: 1
   projectile: {fileID: 414486655066548546, guid: f8881e934c8d0888f89fe79eb1a99953,

@@ -44,6 +44,7 @@ public class Ability {
 
 public class Player : MonoBehaviour
 {
+    private int ammo = 0;
     
     public float moveSpeed = 5.0f;
 
@@ -179,7 +180,7 @@ public class Player : MonoBehaviour
     }
 
     void setState(State newState) {
-        Debug.Log("switching from " + state + " to " + newState);
+        //Debug.Log("switching from " + state + " to " + newState);
 
         if (state == State.Parrying && newState != State.Parrying) {
             GameObject shieldInstance = transform.Find("shield").gameObject;
@@ -236,5 +237,9 @@ public class Player : MonoBehaviour
         flashTimer.update(Time.deltaTime);
         transform.position += velocity * Time.deltaTime;
         updateColor();
+    }
+
+    public void addAmmo() {
+        ammo += 1;
     }
 }
