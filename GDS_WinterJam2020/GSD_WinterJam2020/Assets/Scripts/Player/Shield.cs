@@ -12,6 +12,7 @@ public class Shield : MonoBehaviour {
             Player player = playerObj.GetComponent<Player>();
 
             player.addAmmo();
+            player.resetShield();
 
             Destroy(otherObj);
         }

@@ -256,4 +256,8 @@ public class Player : MonoBehaviour
     public void addAmmo() {
         ammo += 1;
     }
+
+    public void resetShield() {
+        parryAbility.reset();
+    }
 }
