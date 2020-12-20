@@ -300,6 +300,7 @@ MonoBehaviour:
   run_speed: 3
   walk_speed: 0
   walk_radius: 5
+  hp: 10
 --- !u!58 &3481350004588945830
 CircleCollider2D:
   m_ObjectHideFlags: 0

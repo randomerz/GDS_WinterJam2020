@@ -40,6 +40,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5580113338313601215}
   - component: {fileID: -5031520707161600819}
+  - component: {fileID: 7184069116020978993}
+  - component: {fileID: 1539083358655220698}
+  - component: {fileID: 2994080358147273241}
+  - component: {fileID: -8504739727286518018}
   m_Layer: 8
   m_Name: ShotgunFish
   m_TagString: Enemy
@@ -84,6 +88,72 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!58 &7184069116020978993
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5197528608288254473}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.03284934, y: 0.06822556}
+  serializedVersion: 2
+  m_Radius: 0.3989251
+--- !u!114 &1539083358655220698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5197528608288254473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d86c915c98c6e33908879c4adb037546, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  run_speed: 5
+  walk_speed: 0.5
+  walk_radius: 12.5
+  hp: 10
+--- !u!114 &2994080358147273241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5197528608288254473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6073efe86772a15099cb8236f0cfacfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turnSpeed: 50
+  fireRate: 1
+  projectileSpeed: 20
+  projectileDamage: 20
+  team: 1
+  projectile: {fileID: 7840938328587096668, guid: 536082233323486619fa4761c957423a,
+    type: 3}
+  aimAlgo: {fileID: -8504739727286518018}
+  audioManager: {fileID: 0}
+--- !u!114 &-8504739727286518018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5197528608288254473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 797598ff1c669504387dce0011aee7b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turnSpeed: 0
 --- !u!1 &5673075663111479936
 GameObject:
   m_ObjectHideFlags: 0
