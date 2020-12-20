@@ -2623,6 +2623,58 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1672571536, guid: 8dc44c090e8b307d887f8ac2d5b638fe, type: 3}
+      propertyPath: m_sfxList.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1672571536, guid: 8dc44c090e8b307d887f8ac2d5b638fe, type: 3}
+      propertyPath: m_sfxList.Array.data[5].m_name
+      value: parry
+      objectReference: {fileID: 0}
+    - target: {fileID: 1672571536, guid: 8dc44c090e8b307d887f8ac2d5b638fe, type: 3}
+      propertyPath: m_sfxList.Array.data[6].m_name
+      value: parry_reset
+      objectReference: {fileID: 0}
+    - target: {fileID: 1672571536, guid: 8dc44c090e8b307d887f8ac2d5b638fe, type: 3}
+      propertyPath: m_sfxList.Array.data[7].m_name
+      value: deflect_success
+      objectReference: {fileID: 0}
+    - target: {fileID: 1672571536, guid: 8dc44c090e8b307d887f8ac2d5b638fe, type: 3}
+      propertyPath: m_sfxList.Array.data[5].m_pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1672571536, guid: 8dc44c090e8b307d887f8ac2d5b638fe, type: 3}
+      propertyPath: m_sfxList.Array.data[6].m_pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1672571536, guid: 8dc44c090e8b307d887f8ac2d5b638fe, type: 3}
+      propertyPath: m_sfxList.Array.data[7].m_pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1672571536, guid: 8dc44c090e8b307d887f8ac2d5b638fe, type: 3}
+      propertyPath: m_sfxList.Array.data[5].m_volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1672571536, guid: 8dc44c090e8b307d887f8ac2d5b638fe, type: 3}
+      propertyPath: m_sfxList.Array.data[6].m_volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1672571536, guid: 8dc44c090e8b307d887f8ac2d5b638fe, type: 3}
+      propertyPath: m_sfxList.Array.data[7].m_volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1672571536, guid: 8dc44c090e8b307d887f8ac2d5b638fe, type: 3}
+      propertyPath: m_sfxList.Array.data[5].m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4e60b30502d73b249b642b6d6359d61b, type: 3}
+    - target: {fileID: 1672571536, guid: 8dc44c090e8b307d887f8ac2d5b638fe, type: 3}
+      propertyPath: m_sfxList.Array.data[6].m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 16c96461fec884847810cdf59f492bdd, type: 3}
+    - target: {fileID: 1672571536, guid: 8dc44c090e8b307d887f8ac2d5b638fe, type: 3}
+      propertyPath: m_sfxList.Array.data[7].m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 95cc07a857667d14a9a12ca8521956ee, type: 3}
     - target: {fileID: 5249408956337281016, guid: 8dc44c090e8b307d887f8ac2d5b638fe,
         type: 3}
       propertyPath: HP
