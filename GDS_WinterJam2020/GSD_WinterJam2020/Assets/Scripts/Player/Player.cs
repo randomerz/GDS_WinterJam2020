@@ -235,7 +235,7 @@ public class Player : MonoBehaviour
 
     public void damage()
     {
-        if (state == State.Parrying) {
+        if (state != State.Parrying) {
             HP -= 1;
             flashTimer.reset();
         }
