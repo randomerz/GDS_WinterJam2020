@@ -326,7 +326,7 @@ public class Player : MonoBehaviour
     }
 
     public void addAmmo() {
-        ammo += 1;
+        ammo = Mathf.Min(maxAmmo, ammo + 1);
     }
 
     public void resetShield() {
@@ -373,7 +373,7 @@ public class Player : MonoBehaviour
         while (ammo < maxAmmo / 2)
         {
             ammo += 1;
-            yield return new WaitForSeconds(.1f);
+            yield return new WaitForSeconds(.2f);
         }
         canPlaceTurrets = true;
     }
