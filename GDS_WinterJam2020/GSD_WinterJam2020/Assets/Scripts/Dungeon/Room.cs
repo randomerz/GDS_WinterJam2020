@@ -52,6 +52,7 @@ public class Room : MonoBehaviour
                 //ChangeDoorState(true);
                 StartCoroutine(ShakeDoorThenOpen());
                 finishedWaves = true;
+                GameObject.Find("Player").GetComponent<Player>().destroyAllTurrets();
             }
         }
     }

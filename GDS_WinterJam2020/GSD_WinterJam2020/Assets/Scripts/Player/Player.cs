@@ -45,6 +45,8 @@ public class Ability {
 public class Player : MonoBehaviour
 {
     public int ammo = 0;
+    public int maxAmmo = 6;
+    private bool canPlaceTurrets = true;
     
     public float moveSpeed = 5.0f;
 
@@ -79,6 +81,7 @@ public class Player : MonoBehaviour
 
     public SpriteRenderer sprite;
     public ParticleSystem dashParticles;
+    public GameObject turretDeathParticle;
     public GameObject wrenchObj;
 
     private AudioManager.AudioManager audioManager;
@@ -282,9 +285,11 @@ public class Player : MonoBehaviour
     }
 
     public void placeTurret() {
-        if (ammo > 0) {
+        // if (ammo >= maxAmmo && canPlaceTurrets) {
+        if (ammo > 0 && canPlaceTurrets) {
             ammo -= 1;
-            float rot = wrenchObj.transform.rotation.eulerAngles.z;
+            // ammo = 0;
+            float rot = wrenchObj.transform.rotation.z;
             Vector3 turretVel = new Vector3(Mathf.Cos(rot), Mathf.Sin(rot), 0.0f) * -turretSpeed;
 
             Debug.Log(turretPrefab);
@@ -294,4 +299,27 @@ public class Player : MonoBehaviour
             slide.setVel(turretVel);
         }
    }
+
+    public void destroyAllTurrets()
+    {
+        GameObject[] turrets = GameObject.FindGameObjectsWithTag("Turret");
+        foreach (GameObject g in turrets)
+        {
+            GameObject dp = Instantiate(turretDeathParticle, g.transform.position, g.transform.rotation);
+            Destroy(g);
+            Destroy(dp, 3);
+        }
+        StartCoroutine(refillAmmoCount());
+    }
+
+    private IEnumerator refillAmmoCount()
+    {
+        canPlaceTurrets = false;
+        while (ammo < maxAmmo)
+        {
+            ammo += 1;
+            yield return new WaitForSeconds(.1f);
+        }
+        canPlaceTurrets = true;
+    }
 }
