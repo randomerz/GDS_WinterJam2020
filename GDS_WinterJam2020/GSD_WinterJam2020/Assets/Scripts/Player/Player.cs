@@ -291,7 +291,7 @@ public class Player : MonoBehaviour
 
     public void restartPlayer()
     {
-        HP = 5;
+        HP = 7;
         ammo = 4;
     }
 
