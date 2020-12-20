@@ -91,7 +91,7 @@ MonoBehaviour:
   fireRate: 1
   projectileSpeed: 20
   projectileDamage: 20
-  team: 0
+  team: 1
   projectile: {fileID: -1721522035692372225}
   aimAlgo: {fileID: 5308461129328304369}
   audioManager: {fileID: 0}
