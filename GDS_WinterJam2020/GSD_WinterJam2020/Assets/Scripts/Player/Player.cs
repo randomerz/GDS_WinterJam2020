@@ -244,6 +244,7 @@ public class Player : MonoBehaviour
             //Debug.Log("cooldown: " + cooldownTimer.timeRemaining);
             dashAbility.reset();
             velocity *= dashMultiplier;
+            audioManager.PlayOneShotSFX(8);
             setState(State.Dashing);
         }
     }
