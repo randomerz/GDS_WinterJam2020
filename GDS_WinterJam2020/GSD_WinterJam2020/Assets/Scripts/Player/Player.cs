@@ -233,9 +233,15 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void damage() {
+    public void damage()
+    {
         HP -= 1;
         flashTimer.reset();
+    }
+
+    public void gainHP(int hp)
+    {
+        HP += 1;
     }
 
     private void FixedUpdate()

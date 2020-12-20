@@ -240,7 +240,7 @@ TextureImporter:
       name: sheet_6
       rect:
         serializedVersion: 2
-        x: 584
+        x: 585
         y: 2764
         width: 49
         height: 43
@@ -513,9 +513,9 @@ TextureImporter:
       name: sheet_19
       rect:
         serializedVersion: 2
-        x: 796
+        x: 795
         y: 2764
-        width: 47
+        width: 49
         height: 43
       alignment: 0
       pivot: {x: 0.5, y: 0.5}

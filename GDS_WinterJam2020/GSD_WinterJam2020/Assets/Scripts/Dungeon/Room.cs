@@ -10,6 +10,8 @@ public class Room : MonoBehaviour
     public List<GameObject> enemies1 = new List<GameObject>();
     public List<GameObject> enemies2 = new List<GameObject>();
     private bool spawnedWave1 = false;
+    private bool spawnedWave2 = false;
+    private bool finishedWaves = false;
 
     public bool isOpen = true;
     public bool isLocked = false;
@@ -34,7 +36,7 @@ public class Room : MonoBehaviour
                 if (g.activeSelf)
                     activeEnemy1Count++;
 
-            if (!spawnedWave1 && activeEnemy1Count == 0)
+            if (spawnedWave1 && !spawnedWave2  && activeEnemy1Count == 0)
             {
                 SpawnWave2();
                 spawnedWave1 = true;
@@ -45,9 +47,11 @@ public class Room : MonoBehaviour
                 if (g.activeSelf)
                     activeEnemy2Count++;
 
-            if (spawnedWave1 && activeEnemy2Count == 0)
+            if (spawnedWave2 && !finishedWaves && activeEnemy2Count == 0)
             {
-                ChangeDoorState(true);
+                //ChangeDoorState(true);
+                StartCoroutine(ShakeDoorThenOpen());
+                finishedWaves = true;
             }
         }
     }
@@ -75,8 +79,32 @@ public class Room : MonoBehaviour
             g.SetActive(s);
         foreach (GameObject g in doorsClose)
             g.SetActive(!s);
-        //foreach (Animator a in doorAnimators)
-        //    a.SetBool("isOpen", isOpen);
+        foreach (ParticleSystem p in doorParticles)
+            p.Play();
+    }
+
+    private IEnumerator ShakeDoorThenOpen()
+    {
+        float dt = 0.1f;
+        float totalTime = 1;
+        Vector3[] origPos = new Vector3[doorsClose.Length];
+        for (int i = 0; i < doorsClose.Length; i++)
+            origPos[i] = doorsClose[i].transform.position;
+
+        for (float i = 0; i < totalTime; i += dt)
+        {
+            Vector3 r = new Vector3(Random.Range(-.02f, .02f), Random.Range(-.02f, .02f));
+
+            for (int j = 0; j < doorsClose.Length; j++)
+                doorsClose[j].transform.position = origPos[j] + r;
+
+            yield return new WaitForSeconds(dt);
+        }
+
+        for (int j = 0; j < doorsClose.Length; j++)
+            doorsClose[j].transform.position = origPos[j];
+
+        ChangeDoorState(true);
     }
 
     private void SpawnWave1()
