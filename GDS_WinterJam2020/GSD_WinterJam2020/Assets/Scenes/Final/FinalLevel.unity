@@ -1607,6 +1607,12 @@ Transform:
   m_Father: {fileID: 1079265234}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &417523892 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8925776498305054865, guid: 48741101b3168fce4b3d4b5aa92262a1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1883726645}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &427559950 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8817304848052759574, guid: 54f73b50f517dcd42b7f68e8e988cd5d,
@@ -3606,6 +3612,12 @@ ParticleSystem:
     type: 3}
   m_PrefabInstance: {fileID: 981402668}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &880981062 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8925776498305054865, guid: 48741101b3168fce4b3d4b5aa92262a1,
+    type: 3}
+  m_PrefabInstance: {fileID: 24148687}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &883863189
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4031,6 +4043,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8817304848052759574, guid: 54f73b50f517dcd42b7f68e8e988cd5d,
     type: 3}
   m_PrefabInstance: {fileID: 981402668}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &999827710 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8925776498305054865, guid: 48741101b3168fce4b3d4b5aa92262a1,
+    type: 3}
+  m_PrefabInstance: {fileID: 745619787}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1006486682
 PrefabInstance:
@@ -40055,10 +40073,10 @@ MonoBehaviour:
   - {fileID: 1449788838}
   - {fileID: 1449788837}
   enemies1:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 417523892}
+  - {fileID: 999827710}
+  - {fileID: 2025595857}
+  - {fileID: 880981062}
   enemies2:
   - {fileID: 670056235}
   - {fileID: 1017014323}
@@ -40880,6 +40898,12 @@ MonoBehaviour:
   isOpen: 1
   isLocked: 0
   isExplored: 0
+--- !u!1 &2025595857 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8925776498305054865, guid: 48741101b3168fce4b3d4b5aa92262a1,
+    type: 3}
+  m_PrefabInstance: {fileID: 10647915}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2034078245
 GameObject:
   m_ObjectHideFlags: 0
