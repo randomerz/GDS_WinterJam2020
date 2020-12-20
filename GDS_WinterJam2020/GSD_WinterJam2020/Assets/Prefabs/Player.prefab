@@ -5090,13 +5090,13 @@ MonoBehaviour:
   HP: 5
   playerAnim: {fileID: 5249408957470549703}
   playerSprite: {fileID: 5249408957470549704}
-  turretSpeed: 20
+  turretSpeed: 25
   turretPrefab: {fileID: 3729212530189596604, guid: 8acefdb6a0acf0d0d9f6ac64012bbac0,
     type: 3}
   dashTime: 0.25
   dashCooldown: 0
-  parryTime: 0.25
-  parryCooldown: 3
+  parryTime: 0.35
+  parryCooldown: 1.25
   shield: {fileID: 6432990517456392168, guid: 0328745a09cde0ca4b79de74fc855917, type: 3}
   dashDamping: 0.99
   runDamping: 0.5
