@@ -18,7 +18,7 @@ public class TurretBase : MonoBehaviour
 
     public Projectile projectile;
 
-    private Timer fireTimer;
+    protected Timer fireTimer;
 
     public AimBehavior aimAlgo; 
     public AudioManager.AudioManager audioManager;
