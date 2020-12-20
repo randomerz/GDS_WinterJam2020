@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BobAnimation : MonoBehaviour
 {
+    public bool randomStart;
     public float A;
     public float c;
     private float t;
@@ -12,6 +13,8 @@ public class BobAnimation : MonoBehaviour
     void Start()
     {
         orig = transform.position;
+        if (randomStart)
+            t += Random.Range(0, 2 * Mathf.PI / c);
     }
 
     void Update()

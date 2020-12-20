@@ -15,7 +15,7 @@ public class UpdateHUD : MonoBehaviour
     private void Update()
     {
         SetHealth(player.HP);
-        SetHealth(player.ammo);
+        SetAmmo(player.ammo);
     }
 
     public void SetHealth(int hp)
