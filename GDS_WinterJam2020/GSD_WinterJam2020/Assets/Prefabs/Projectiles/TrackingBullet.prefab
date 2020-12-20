@@ -97,9 +97,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  bulletLifetime: 1.5
+  bulletLifetime: 2
   team: 0
-  trackingAccel: 2
+  trackingAccel: 1
 --- !u!58 &7284767840483996910
 CircleCollider2D:
   m_ObjectHideFlags: 0
