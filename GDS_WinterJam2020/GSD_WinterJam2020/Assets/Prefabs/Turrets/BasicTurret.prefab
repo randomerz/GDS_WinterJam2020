@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turnSpeed: 50
-  fireRate: 1
+  fireRate: 0.9
   projectileSpeed: 20
   projectileDamage: 20
   team: 0
@@ -119,7 +119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 577225a382b50c7afb8219db366b9c72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turnSpeed: 10
+  turnSpeed: 15
 --- !u!50 &1724032799557959961
 Rigidbody2D:
   serializedVersion: 4
