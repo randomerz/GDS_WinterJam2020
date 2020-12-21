@@ -75,6 +75,7 @@ MonoBehaviour:
     type: 3}
   aimAlgo: {fileID: 7304010210926964503}
   audioManager: {fileID: 0}
+  rotatableGun: {fileID: 8012447209799052187}
 --- !u!114 &7304010210926964503
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -293,13 +294,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8012447210821441953}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
   m_LocalPosition: {x: -0.05, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8012447209799052186}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!212 &8012447210821441983
 SpriteRenderer:
   m_ObjectHideFlags: 0

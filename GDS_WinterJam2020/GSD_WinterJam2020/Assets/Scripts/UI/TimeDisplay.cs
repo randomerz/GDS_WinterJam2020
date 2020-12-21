@@ -10,6 +10,8 @@ public class TimeDisplay : MonoBehaviour
     void Start()
     {
         float startTime = GameObject.Find("Player").GetComponent<Player>().startTime;
-        timeText.text = "Time: " + (Time.time - startTime);
+        float minutes = Mathf.Floor((Time.time - startTime) / 60);
+        float seconds = Mathf.RoundToInt((Time.time - startTime) % 60);
+        timeText.text = "Time: " + minutes + ";" + seconds;
     }
 }

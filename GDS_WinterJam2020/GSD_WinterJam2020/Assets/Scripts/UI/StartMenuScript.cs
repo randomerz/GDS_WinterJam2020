@@ -54,4 +54,9 @@ public class StartMenuScript : MonoBehaviour
     {
         SceneManager.LoadScene("Tutorial");
     }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }

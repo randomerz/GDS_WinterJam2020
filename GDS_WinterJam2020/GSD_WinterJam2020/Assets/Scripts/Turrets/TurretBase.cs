@@ -23,6 +23,8 @@ public class TurretBase : MonoBehaviour
     public AimBehavior aimAlgo; 
     public AudioManager.AudioManager audioManager;
 
+    public GameObject rotatableGun;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +32,8 @@ public class TurretBase : MonoBehaviour
         fireTimer = new Timer(fireRate);
         float randDelay = Random.Range(0.0f, fireRate);
         fireTimer.addTime(randDelay);
+        if (rotatableGun == null)
+            rotatableGun = gameObject;
     }
 
     void shoot() {
@@ -39,7 +43,7 @@ public class TurretBase : MonoBehaviour
             Instantiate(projectile, new Vector3(transform.position.x, transform.position.y, 0.5f), Quaternion.identity);
         p.setTeam(team);
 
-        float angle = (transform.rotation.eulerAngles.z + 90) * Mathf.Deg2Rad;
+        float angle = (rotatableGun.transform.rotation.eulerAngles.z + 90) * Mathf.Deg2Rad;
         Vector3 dir = new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0.0f);
         p.initialize(projectileSpeed, dir, projectileDamage, aimAlgo.getTarget());
 
@@ -63,7 +67,7 @@ public class TurretBase : MonoBehaviour
         //transform.rotation = Quaternion.Euler(0.0f, 0.0f, aimAlgo.getAngle(transform));
         float angle = aimAlgo.getAngle(transform);
         Quaternion targetRotation = Quaternion.Euler(new Vector3(0, 0, angle));
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, turnSpeed * Time.deltaTime);
+        rotatableGun.transform.rotation = Quaternion.RotateTowards(rotatableGun.transform.rotation, targetRotation, turnSpeed * Time.deltaTime);
     }
 
     void FixedUpdate() {
